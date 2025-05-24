@@ -14,6 +14,8 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100%;
 }
 
 /* Banner */
@@ -158,6 +160,10 @@ body {
 .btn-custom:hover {
   background-color: var(--secondary-color);
   color: white;
+}
+
+main{
+  flex: 1;
 }
 
 .footer {

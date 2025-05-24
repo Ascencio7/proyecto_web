@@ -1,0 +1,27 @@
+.user-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #347dc1;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ecf0f1;
+
+}
+
+.card p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #ecf0f1;
+}
+
