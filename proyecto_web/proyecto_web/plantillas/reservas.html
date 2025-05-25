@@ -1,115 +1,529 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Iconos Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link href="../css/style.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
 
- </head>
- <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas</title>
+  <!-- Hojas de estilo de Bootstrap, Boxicons y estilos personalizados -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/styleReserva.css" rel="stylesheet" />
 
-    <!-- Header -->
-    <header>
-      <div class="container-fluid bg-light py-2 border-bottom">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-4">
-              <div class="d-flex align-items-center">
-                <i class="bx bx-phone-call fs-4 text-success me-2"></i>
-                <div>
-                  <div class="text-muted small">Información</div>
-                  <div class="fw-bold">+503 2258-5505</div>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container-fluid bg-light py-2 border-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <div class="d-flex align-items-center">
+              <a href="../index.htm">
+                <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
+              </a>
+              <!-- Icono de llamada eliminado xd -->
+            </div>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center justify-content-center">
+              <i class="bx bx-globe fs-2 text-primary me-2"></i>
+              <h1 class="m-0 fs-3 fw-bold"><a href="../index.html" class="text-decoration-none">Turismo SV</a></h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          title="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link indexNav px-3" href="../index.htm">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <select class="select-menu mx-3 my-1" title="TiposTurismo">
+                <option value="">TURISMO</option>
+                <option value="urbano">Urbano</option>
+                <option value="playas">Playas</option>
+                <option value="lagos">Lagos</option>
+                <option value="montanas">Montañas</option>
+              </select>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link index px-3" href="../plantillas/reservas.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link promociones!!! aca deben colocar el nombre de la clase para mantener el color activo px-3"
+                href="../plantillas/promociones.html">Promociones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <!-- Inicio de elementos de reservas -->
+  <main class="container my-5">
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold mb-3">Reserva tu experiencia turística</h2>
+      </div>
+    </div>
+    <!-- Formulario de reserva (nuevo) -->
+    <form id="formReserva" class="form-section border p-4 rounded shadow-sm bg-light">
+      <!-- Mostrar el costo -->
+      <div class="col-12">
+        <div id="costoEstimado" class="alert alert-info fw-bold d-none">
+          Total estimado: $<span id="montoEstimado">0.00</span>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="col-md-6">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="telefono" required>
+        </div>
+        <div class="col-md-6">
+          <label for="paquete" class="form-label">Selecciona paquete</label>
+          <select class="form-select" id="paquete">
+            <option selected value="">Elige una opción</option>
+            <option value="eco-aventura" data-precio="149" data-incluye-adultos="2" data-incluye-ninos="2">Paquete Eco
+              Aventura</option>
+            <option value="relax" data-precio="199" data-incluye-adultos="2" data-incluye-ninos="0">Paquete Relax
+            </option>
+          </select>
+        </div>
+
+        <!-- Sección de destino y fechas con validación -->
+        <div class="col-md-6">
+          <label for="destination" class="form-label">Destino</label>
+          <select class="form-select" id="destination" required>
+
+            <option selected disabled value="">Seleccione un destino</option>
+            <option value="Playa El Tunco" data-precio="50">Playa El Tunco</option>
+            <option value="Lago de Coatepeque" data-precio="75">Lago de Coatepeque</option>
+            <option value="Cerro Verde" data-precio="65">Cerro Verde</option>
+            <option value="Suchitoto" data-precio="60">Suchitoto</option>
+            <option value="El Boquerón" data-precio="55">El Boquerón</option>
+            <option value="Surf City" data-precio="45">Surf City</option>
+          </select>
+          <div class="invalid-feedback">Por favor selecciona un destino</div>
+        </div>
+        <div class="col-md-3">
+          <label for="check-in" class="form-label">Fecha de llegada</label>
+          <input type="date" class="form-control" id="check-in" required>
+          <div class="invalid-feedback">Ingresa una fecha de llegada</div>
+        </div>
+        <div class="col-md-3">
+          <label for="check-out" class="form-label">Fecha de salida</label>
+          <input type="date" class="form-control" id="check-out" required>
+          <div class="invalid-feedback">Ingresa una fecha de salida</div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="adults" class="form-label">Adultos</label>
+          <select class="form-select" id="adults">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4+</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="children" class="form-label">Niños</label>
+          <select class="form-select" id="children">
+            <option selected>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3+</option>
+          </select>
+        </div>
+
+        <div class="col-12 d-grid mt-3">
+          <button type="submit" class="btn btn-success btn-lg">Confirmar Reserva</button>
+        </div>
+      </div>
+    </form>
+    </div>
+    </div>
+
+    <!-- Destinos populares -->
+    <div class="row mb-5 mt-4">
+      <div class="col-12">
+        <h2 class="text-center mb-4 fw-bold">Destinos populares</h2>
+
+        <!-- Primera fila de 3 tarjetas -->
+        <div class="row g-4 mb-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="card booking-card h-100">
+              <div class="position-relative">
+                <img src="../images/playaTunco.jpg" class="card-img-top destination-img" alt="Playa El Tunco">
+                <span class="price-badge">Desde $50</span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Playa El Tunco</h5>
+                <p class="card-text">Disfruta de las mejores olas para surfear y atardeceres inolvidables en una de las
+                  playas más famosas de El Salvador.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i class="bx bx-star text-warning"></i>
+                    <span class="ms-1">4.8 (256)</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
                 </div>
               </div>
             </div>
-            
-            <div class="col-md-4 text-center">
-              <div class="d-flex align-items-center justify-content-center">
-                <i class="bx bx-globe fs-2 text-primary me-2"></i>
-                <h1 class="m-0 fs-3 fw-bold"><a href="../index.htm" class="text-decoration-none">Turismo SV</a></h1>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="card booking-card h-100">
+              <div class="position-relative">
+                <img src="../images/lagoCoatepeque.jpg" class="card-img-top destination-img" alt="Lago de Coatepeque">
+                <span class="price-badge">Desde $75</span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Lago de Coatepeque</h5>
+                <p class="card-text">Un lago de origen volcánico con aguas cristalinas perfecto para nadar, pasear en
+                  kayak o simplemente relajarse.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i class="bx bx-star text-warning"></i>
+                    <span class="ms-1">4.9 (189)</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
+                </div>
               </div>
             </div>
-            
-            <div class="col-md-4 text-end">
-              <div class="d-flex justify-content-end gap-3">
-                <a href="#" class="text-dark"><i class="bx bxl-facebook fs-4"></i></a>
-                <a href="#" class="text-dark"><i class="bx bxl-instagram fs-4"></i></a>
-                <a href="#" class="text-dark"><i class="bx bxl-twitter fs-4"></i></a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="card booking-card h-100">
+              <div class="position-relative">
+                <img src="../images/cerroVerde.jpeg" class="card-img-top destination-img" alt="Cerro Verde">
+                <span class="price-badge">Desde $65</span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Cerro Verde</h5>
+                <p class="card-text">Disfruta de impresionantes vistas desde este volcán inactivo, rodeado de bosque
+                  nebuloso y senderos naturales en el Parque Nacional Los Volcanes.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i class="bx bx-star text-warning"></i>
+                    <span class="ms-1">4.7 (312)</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- Fin primera fila -->
+
+        <!-- Segunda fila de 3 tarjetas -->
+        <div class="row g-4">
+          <!-- Card 4 -->
+          <div class="col-md-4">
+            <div class="card booking-card h-100">
+              <div class="position-relative">
+                <img src="../images/suchitoto.jpg" class="card-img-top destination-img" alt="Suchitoto">
+                <span class="price-badge">Desde $60</span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Suchitoto</h5>
+                <p class="card-text">Encantadora ciudad colonial con calles empedradas, arte local y vistas al Lago
+                  Suchitlán, ideal para turismo cultural.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i class="bx bx-star text-warning"></i>
+                    <span class="ms-1">4.6 (278)</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-md-4">
+            <div class="card booking-card h-100">
+              <div class="position-relative">
+                <img src="../images/el-boqueron.jpg" class="card-img-top destination-img" alt="ElBoquerón">
+                <span class="price-badge">Desde $55</span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">El Boquerón</h5>
+                <p class="card-text">Parque nacional en el cráter del volcán de San Salvador, con senderos naturales y
+                  miradores a 1,800 metros de altura.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i class="bx bx-star text-warning"></i>
+                    <span class="ms-1">4.8 (231)</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-md-4">
+            <div class="card booking-card h-100">
+              <div class="position-relative">
+                <img src="../images/surfCity.jpg" class="card-img-top destination-img" alt="SurfCity">
+                <span class="price-badge">Desde $45</span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Surf City</h5>
+                <p class="card-text">Una zona costero-marítima de más de 300 kilómetros, con parque de diversiones y más
+                  de 20 competencias internacionales de surf.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i class="bx bx-star text-warning"></i>
+                    <span class="ms-1">4.5 (198)</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- Fin segunda fila -->
+      </div>
+    </div>
+
+    <!-- Tipos de paquetes -->
+    <div class="row mb-5 mt-4">
+      <div class="col-12">
+        <h2 class="text-center mb-4 fw-bold">Paquetes turísticos</h2>
+        <div class="row g-4">
+          <!-- Paquete 1 -->
+          <div class="col-md-6">
+            <div class="card booking-card h-100">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <img src="../images/paq1.png" class="img-fluid rounded-start h-100" style="object-fit: cover;"
+                    alt="Aventura">
+                </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Paquete Eco Aventura</h5>
+                    <p class="card-text">Incluye: Reservaciones para 4 personas (dos adultos y dos niños), caminatas
+                      guiadas,
+                      visita a reservas naturales.</p>
+                    <ul class="list-unstyled">
+                      <li><i class="bx bx-check text-success me-2"></i> Guías expertos</li>
+                      <li><i class="bx bx-check text-success me-2"></i> Equipo incluido</li>
+                      <li><i class="bx bx-check text-success me-2"></i> Transporte privado</li>
+                    </ul>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <h4 class="mb-0 text-primary" data-precio="149">$ 149</h4>
+                      <a href="#" class="btn btn-primary">Reservar paquete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paquete 2 -->
+          <div class="col-md-6">
+            <div class="card booking-card h-100">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <img src="../images/paq2.jpg" class="img-fluid rounded-start h-100" style="object-fit: cover;"
+                    alt="Relajación">
+                </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <h5 class="card-title">Paquete Relax</h5>
+                    <p class="card-text">Incluye: Reservaciones para dos personas, servicio de spa en playas, paseos en
+                      lancha por el lago y cenas gourmet con vista
+                      al mar.</p>
+                    <ul class="list-unstyled">
+                      <li><i class="bx bx-check text-success me-2"></i> Masajes incluidos</li>
+                      <li><i class="bx bx-check text-success me-2"></i> Alojamiento premium</li>
+                      <li><i class="bx bx-check text-success me-2"></i> Traslados privados</li>
+                    </ul>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <h4 class="mb-0 text-primary" data-precio="199">$ 199</h4>
+                      <a href="#" class="btn btn-primary">Reservar paquete</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link px-3" href="../index.htm">Inicio</a>
-              </li>
-              <li class="nav-item dropdown">
-                <select class="select-menu mx-3 my-1">
-                  <option value="">TURISMO</option>
-                  <option value="urbano">Urbano</option>
-                  <option value="playas">Playas</option>
-                  <option value="lagos">Lagos</option>
-                  <option value="montanas">Montañas</option>
-                </select>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/usuario.html">Usuario</a>
-            </li>
-            </ul>
-            
-            <!-- Boton de buscar -->
-            <form class="d-flex">
-              <input class="form-control me-2 rounded-pill" type="search" placeholder="Buscar destino...">
-              <button class="btn btn-primary rounded-pill px-3" type="submit">
-                <i class="bx bx-search"></i>
+    <!-- Preguntas frecuentes -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="mb-4">Preguntas frecuentes</h3>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                ¿Cuál es la política de cancelación?
               </button>
-            </form>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Puedes cancelar tu reserva hasta 48 horas antes del tour sin ningún cargo. Para cancelaciones dentro de
+                las 48 horas previas, se aplicará un cargo del 50% del valor total.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                ¿Qué métodos de pago aceptan?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Aceptamos tarjetas de crédito/débito (Visa, MasterCard, American Express), transferencias bancarias y
+                PayPal. También puedes pagar en efectivo al llegar si reservas con al menos 72 horas de anticipación.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                ¿Están incluidos los alimentos en los tours?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Depende del paquete seleccionado. Nuestros paquetes de día completo incluyen almuerzo típico
+                salvadoreño. Los paquetes premium incluyen desayuno, almuerzo y cena. Consulta los detalles específicos
+                de cada paquete.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                ¿Cuanto es el cargo adicional por reservaciones extra?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Se cobrará un cargo adicional del 50% por cada reservacion por niño, y un 60% por cada adulto.
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
-
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-    <div class="container">
-      <p class="mb-2">Turismo Salvadoreño - Todos los Derechos Reservados &copy; 2025</p>
-      <div class="d-flex justify-content-center gap-3 fs-4 mb-2">
-        <i class='bx bxl-facebook'></i>
-        <i class='bx bxl-instagram-alt'></i>
-        <i class='bx bxl-whatsapp'></i>
-        <i class='bx bxs-envelope'></i>
       </div>
-      <p class="mb-0">Síguenos en nuestras redes sociales</p>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center">
+        <!-- Logo -->
+        <div class="col-md-3 mb-4">
+          <a href="../index.htm">
+            <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
+          </a>
+        </div>
+
+        <!-- Sobre Nosotros -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+          <p class="text-white-50 mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+          <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="col-md-5 mb-4">
+          <h5 class="fw-bold text-uppercase">Síguenos</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
+          </div>
+          <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+            <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+            <div class="text-start">
+              <div class="text-white small">Mayor información</div>
+              <div class="fw-bold text-white">+503 2258-5505</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-secondary">
+      <!-- Derechos -->
+      <div class="text-center small text-muted">
+        &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
+      </div>
     </div>
   </footer>
+  <!-- Modal para mostrar resultados -->
+  <div class="modal fade" id="reservaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reservaModalTitle">Resultado de la reserva</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="reservaModalBody">
+          <!-- Contenido dinámico -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
- </body>
- </html> 
+  <!-- Script de reservaciones -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/reserva.js"></script>
+</body>
+
+</html>

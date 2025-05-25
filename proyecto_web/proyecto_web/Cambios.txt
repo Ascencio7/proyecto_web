@@ -1,0 +1,3 @@
+-Agregados los header y footer en todas las plantillas
+-El elemento "index" en style.css se usa para el resaltado del navbar (para no crear varios en distintos css y usar uno solo)
+-Reservas y Contacto terminados, con simulacion de procesar datos

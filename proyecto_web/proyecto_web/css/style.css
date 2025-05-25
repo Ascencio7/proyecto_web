@@ -212,8 +212,10 @@ main{
 
 /* Esto permite que se mantenga en color activo segun la plantilla en la que se este 
   deben colocar las clases de la plantilla en el html y en el css
-*/
-.index, .quienesSomos, .promociones {
+  Ahora se usa para todas las plantillas xD
+  */
+
+.index {
     background-color: rgb(47, 105, 239);
     color: #fff;
     font-weight: bold;
