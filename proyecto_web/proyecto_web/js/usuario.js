@@ -9,7 +9,7 @@ const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
 
 if (loggedUser) {
   // Mostrara el nombre
-  const capitalizedName = loggedUser.username.charAt(0).toUpperCase() + loggedUser.username.slice(1); // La primer letra sera Mayuscula
+  const capitalizedName = loggedUser.username.charAt(0).toUpperCase() + loggedUser.username.slice(1).toUpperCase(); // Todo el nombre sera Mayuscula
   userNameSpan.textContent = capitalizedName;
   usernameInfo.textContent = loggedUser.username;
   emailInfo.textContent = loggedUser.correo || 'No proporcionado';
