@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Iconos Boxicons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Estilos CSS -->
   <link href="css/style.css" rel="stylesheet" />
 </head>
 
@@ -20,11 +21,10 @@
         <div class="row align-items-center">
           <div class="col-md-4">
             <div class="d-flex align-items-center">
-              <i class="bx bx-phone-call fs-4 text-success me-2"></i>
-              <div>
-                <div class="text-muted small">Información</div>
-                <div class="fw-bold">+503 2258-5505</div>
-              </div>
+              <a href="./index.htm">
+                <img src="./logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
+              </a>
+              <!-- Icono de llamada eliminado xd -->
             </div>
           </div>
 
@@ -35,13 +35,6 @@
             </div>
           </div>
 
-          <div class="col-md-4 text-end">
-            <div class="d-flex justify-content-end gap-3">
-              <a href="#" class="text-dark"><i class="bx bxl-facebook fs-4"></i></a>
-              <a href="#" class="text-dark"><i class="bx bxl-instagram fs-4"></i></a>
-              <a href="#" class="text-dark"><i class="bx bxl-twitter fs-4"></i></a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -77,27 +70,23 @@
               <a class="nav-link px-3" href="./plantillas/contacto.html">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3" href="./plantillas/login.html">Iniciar Sesion</a>
+              <a class="nav-link px-3" href="./plantillas/quienesSomos.html">¿Quiénes Somos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3" href="./plantillas/usuario.html">Usuario</a>
+              <a class="nav-link px-3" href="./plantillas/promociones.html">Promociones</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link px-3" href="./plantillas/login.html">Iniciar Sesion</a>
+            </li>
           </ul>
 
-          <!-- Boton de buscar -->
-          <form class="d-flex">
-            <input class="form-control me-2 rounded-pill" type="search" placeholder="Buscar destino...">
-            <button class="btn btn-primary rounded-pill px-3" type="submit">
-              <i class="bx bx-search"></i>
-            </button>
-          </form>
+          <!-- Boton de buscar eliminado -->
+        
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Banner -->
   <!-- Banner -->
   <section class="banner d-flex align-items-center">
     <div class="banner-overlay"></div>
@@ -109,9 +98,13 @@
   </section>
 
   <!-- Main Content -->
+   <br>
+
+
   <main class="container my-5">
     <!-- Features -->
     <section class="row g-4 mb-5">
+      <center><h2 class="fw-bold">Nuestros Servicios</h2></center>
       <div class="col-md-3">
         <div class="card h-100 shadow-sm card-feature text-center p-3">
           <i class="bx bx-bus mb-3"></i>
@@ -179,78 +172,70 @@
         </div>
     </section>
 
-    <!-- Recommended Destinations -->
-    <section class="mb-5">
-      <h2 class="text-center mb-4 fw-bold">Destinos Recomendados</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm card-product">
-            <div class="position-relative">
-              <img src="./images/surfCity.jpg" class="card-img-top w-100" alt="Surf City">
-              <div class="position-absolute bottom-0 end-0 m-2">
-                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Surf City</h5>
-              <p class="card-text text-success">La Libertad</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm card-product">
-            <div class="position-relative">
-              <img src="./images/cerroVerde.jpeg" class="card-img-top w-100" alt="Cerro Verde">
-              <div class="position-absolute bottom-0 end-0 m-2">
-                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Cerro Verde</h5>
-              <p class="card-text text-success">Santa Ana</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm card-product">
-            <div class="position-relative">
-              <img src="./images/suchitoto.jpg" class="card-img-top w-100" alt="Suchitoto">
-              <div class="position-absolute bottom-0 end-0 m-2">
-                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Suchitoto</h5>
-              <p class="card-text text-success">Cuscatlán</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- Gallery -->
-    <section class="mb-5">
-      <div class="row g-3">
-        <div class="col-md-3 col-6">
-          <img src="./images/volcanes.jpg" class="w-100 rounded shadow gallery-img" alt="Volcán">
-        </div>
-        <div class="col-md-3 col-6">
-          <img src="./images/playas.jpg" class="w-100 rounded shadow gallery-img" alt="Playa">
-        </div>
-        <div class="col-md-3 col-6">
-          <img src="./images/lagos.jpg" class="w-100 rounded shadow gallery-img" alt="Lago">
-        </div>
-        <div class="col-md-3 col-6">
-          <img src="./images/centroHistorico.jpeg" class="w-100 rounded shadow gallery-img" alt="Centro Histórico">
+    <!-- Carrusel de Turismo -->
+<section class="mb-5 container">
+  <div id="carruselTurismo" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carruselTurismo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carruselTurismo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carruselTurismo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carruselTurismo" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner rounded shadow">
+      <div class="carousel-item active">
+        <img src="./images/volcanes.jpg" class="d-block w-100 carrusel-img" alt="Volcán">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Volcanes de El Salvador</h5>
+          <p>Imponentes vistas naturales.</p>
         </div>
       </div>
+      <div class="carousel-item">
+        <img src="./images/playas.jpg" class="d-block w-100 carrusel-img" alt="Playa">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Playas paradisíacas</h5>
+          <p>Disfruta del sol y el mar.</p>
+        </div>
       </div>
-    </section>
+      <div class="carousel-item">
+        <img src="./images/lagos.jpg" class="d-block w-100 carrusel-img" alt="Lago">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Lagos cristalinos</h5>
+          <p>Relájate en la naturaleza.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./images/centroHistorico.jpeg" class="d-block w-100 carrusel-img" alt="Centro Histórico">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Centro Histórico</h5>
+          <p>Cultura, historia y arquitectura.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselTurismo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselTurismo" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</section>
+
+
+
+
+
+
 
     <!-- Blogs -->
     <section>
@@ -290,23 +275,58 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <p class="mb-2">Turismo Salvadoreño - Todos los Derechos Reservados &copy; 2025</p>
-      <div class="d-flex justify-content-center gap-3 fs-4 mb-2">
-        <i class='bx bxl-facebook'></i>
-        <i class='bx bxl-instagram-alt'></i>
-        <i class='bx bxl-whatsapp'></i>
-        <i class='bx bxs-envelope'></i>
+<footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-center">
+      <!-- Logo -->
+      <div class="col-md-3 mb-4">
+        <a href="./index.htm">
+          <img src="./logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
+        </a>
       </div>
-      <p class="mb-0">Síguenos en nuestras redes sociales</p>
+
+      <!-- Sobre Nosotros -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+        <p class="text-white-50 mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+        <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div class="col-md-5 mb-4">
+        <h5 class="fw-bold text-uppercase">Síguenos</h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+          <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
+          <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
+          <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
+          <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
+          <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+        <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+          <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+          <div class="text-start">
+            <div class="text-white small">Mayor información</div>
+            <div class="fw-bold text-white">+503 2258-5505</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <hr class="border-secondary">
+    <!-- Derechos -->
+    <div class="text-center small text-muted">
+      &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
+    </div>
+  </div>
+</footer>
+
 
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

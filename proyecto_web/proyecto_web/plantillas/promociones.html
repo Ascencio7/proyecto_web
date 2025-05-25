@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesion</title>
+    <title>Promociones</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Iconos Boxicons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Estilos CSS -->
     <link href="../css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/styleLogin.css">
-
 </head>
-
 <body>
     
     <!-- Header -->
@@ -33,7 +30,7 @@
           <div class="col-md-4 text-center">
             <div class="d-flex align-items-center justify-content-center">
               <i class="bx bx-globe fs-2 text-primary me-2"></i>
-              <h1 class="m-0 fs-3 fw-bold"><a href="../index.htm" class="text-decoration-none">Turismo SV</a></h1>
+              <h1 class="m-0 fs-3 fw-bold"><a href="#" class="text-decoration-none">Turismo SV</a></h1>
             </div>
           </div>
 
@@ -51,70 +48,43 @@
         <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link index px-3" href="../index.htm">Inicio</a>
+              <a class="nav-link px-3" href="../index.htm">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <select class="select-menu mx-3 my-1">
+                <option value="">TURISMO</option>
+                <option value="urbano">Urbano</option>
+                <option value="playas">Playas</option>
+                <option value="lagos">Lagos</option>
+                <option value="montanas">Montañas</option>
+              </select>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link promociones px-3" href="../plantillas/promociones.html">Promociones</a>
             </li>
             <li class="nav-item">
               <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
             </li>
           </ul>
 
-          <!-- Boton de buscar eliminado -->
-        
         </div>
       </div>
     </nav>
   </header>
 
-    <!-- Login -->
-    <main class="flex-grow-1 d-flex justify-content-center align-items-center bg-light py-5">
-        <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
-            <h2 class="text-center mb-4">Iniciar Sesión</h2>
-            <form id="loginForm">
-                <div class="mb-3">
-                    <input type="text" class="form-control" id="username" placeholder="Usuario" required />
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" id="correo" placeholder="Correo" required />
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control" id="password" placeholder="Contraseña" required />
-                </div>
-                <div class="mb-3">
-                    <label for="profilePic" class="form-label">Foto de perfil (opcional):</label>
-                    <input type="file" class="form-control" id="profilePic" accept="image/*" />
-                </div>
-                <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-success">Entrar</button>
-                    <button type="button" class="btn btn-danger" id="cancelBtn">Cancelar</button>
-                </div>
-            </form>
-        </div>
-    </main>
-
-    <!-- Modal de mensajes -->
-    <div class="modal fade" id="messageModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-3">
-                <p id="messageText"></p>
-                <button type="button" class="btn btn-primary mt-2" id="messageOkBtn" data-bs-dismiss="modal">OK</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de confirmación -->
-    <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-3">
-                <p>¿Desea cancelar el Inicio de Sesión?</p>
-                <button class="btn btn-danger me-2" id="yesBtn">Sí</button>
-                <button class="btn btn-secondary" id="noBtn" data-bs-dismiss="modal">No</button>
-            </div>
-        </div>
-    </div>
-
-    <br><br>
-
-  <!-- Footer -->
+    <!-- Footer -->
 <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
   <div class="container">
     <div class="row text-center text-md-start align-items-center">
@@ -160,11 +130,6 @@
     </div>
   </div>
 </footer>
-
-
-    <script src="../js/script.js"></script>
-    <script src="../js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
