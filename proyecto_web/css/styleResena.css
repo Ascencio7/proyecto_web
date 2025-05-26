@@ -1,0 +1,8 @@
+.banner {
+  background-image: url('../images/bannerResena.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
