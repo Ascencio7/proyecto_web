@@ -1,4 +1,3 @@
-// Script para actualizar la imagen de perfil y el correo del usuario en la barra de navegación
 const users = [
   // Datos de ejemplo de usuarios
   { username: 'vladimir ascencio', correo: 'ascencio3.45@gmail.com', password: '1234' },
@@ -26,10 +25,16 @@ loginForm.addEventListener('submit', function (e) {
   const fileInput = document.getElementById('profilePic'); // Obtener el input de archivo para la imagen de perfil
 
   // Validar que los campos no estén vacíos
+  if (!username || !correo || !password) {
+    showMessage('Por favor completa todos los campos', 'ERROR');
+    return;
+  }
+
+  // Buscar usuario que coincida en username, correo y password
   const user = users.find(u =>
-    u.username.toLowerCase() === username && // Convertir a minúsculas para comparación
-    u.correo.toLowerCase() === correo && // Convertir a minúsculas para comparación
-    u.password === password // Comparar la contraseña sin modificar
+    u.username.toLowerCase() === username &&
+    u.correo.toLowerCase() === correo &&
+    u.password === password
   );
 
   // Validar que el usuario exista
@@ -43,9 +48,9 @@ loginForm.addEventListener('submit', function (e) {
         window.location.href = '../plantillas/usuario.html'; // Redirigir a la página de usuario después de 1.5 segundos
       }, 1500);
     };
- 
+
     // Si hay un archivo seleccionado, leerlo y guardarlo como imagen de perfil
-    if (fileInput && fileInput.files.length > 0) { 
+    if (fileInput && fileInput.files.length > 0) {
       const file = fileInput.files[0]; // Obtener el primer archivo seleccionado
       if (!file.type.startsWith('image/')) {
         showMessage('Por favor selecciona una imagen válida.', 'ERROR'); // Validar que el archivo sea una imagen
@@ -53,7 +58,7 @@ loginForm.addEventListener('submit', function (e) {
       }
 
       // Leer el archivo como Data URL para poder guardarlo en localStorage
-      const reader = new FileReader(); 
+      const reader = new FileReader();
       reader.onload = function () {
         saveAndRedirect({ ...user, photo: reader.result }); // Guardar el usuario con la imagen de perfil
       };
@@ -100,7 +105,7 @@ messageOkBtn.addEventListener('click', () => {
 function showMessage(message, type) {
   // Mostrar un mensaje en un modal con el tipo especificado
   messageText.textContent = message;
-  messageModal.className = `modal ${type}`; 
+  messageModal.className = `modal ${type}`;
   messageModal.style.display = 'flex'; // Mostrar el modal
 }
 
