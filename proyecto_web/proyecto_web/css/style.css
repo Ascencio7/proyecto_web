@@ -173,16 +173,47 @@ main{
   flex: 1;
 }
 
+/* Carrusel */
 .carrusel-img {
   height: 500px;
   object-fit: cover;
+  filter: brightness(0.7); /* oscurece la imagen para que resalte el texto */
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item:hover .carrusel-img {
+  transform: scale(1.05);
 }
 
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 15px;
-  border-radius: 10px;
+  animation: fadeInUp 1s ease-out;
+  background-color: rgba(0, 0, 0, 0.5); /* fondo oscuro semitransparente */
+  padding: 20px;
+  border-radius: 12px;
 }
+
+.carousel-caption h5,
+.carousel-caption p {
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 0 4px #000);
+}
+/* Carrusel */
 
 /* Footer */
 .footer {
