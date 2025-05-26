@@ -31,7 +31,7 @@
           <div class="col-md-4 text-center">
             <div class="d-flex align-items-center justify-content-center">
               <i class="bx bx-globe fs-2 text-primary me-2"></i>
-              <h1 class="m-0 fs-3 fw-bold"><a href="#" class="text-decoration-none">Turismo SV</a></h1>
+              <h1 class="m-0 fs-3 fw-bold"><a href="./index.htm" class="text-decoration-none">Turismo SV</a></h1>
             </div>
           </div>
 
@@ -52,12 +52,13 @@
               <a class="nav-link index px-3" href="#">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <select class="select-menu mx-3 my-1">
+              <select class="select-menu mx-3 my-1" onchange="location = this.value;">
                 <option value="">TURISMO</option>
-                <option value="urbano">Urbano</option>
-                <option value="playas">Playas</option>
-                <option value="lagos">Lagos</option>
-                <option value="montanas">Montañas</option>
+                <option value="./plantillas/urbano.html"></a>Urbano</option>
+                <option value="./plantillas/rural.html">Rural</option>
+                <option value="./plantillas/playas.html">Playas</option>
+                <option value="./plantillas/lagos.html">Lagos</option>
+                <option value="./plantillas/montannas.html">Montañas</option>
               </select>
             </li>
             <li class="nav-item">
@@ -78,10 +79,7 @@
             <li class="nav-item">
               <a class="nav-link px-3" href="./plantillas/login.html">Iniciar Sesion</a>
             </li>
-          </ul>
-
-          <!-- Boton de buscar eliminado -->
-        
+          </ul>        
         </div>
       </div>
     </nav>
@@ -145,39 +143,111 @@
       </div>
     </section>
 
-    <!-- Categories -->
+\
+
+
+
     <section class="mb-5">
       <h2 class="text-center mb-4 fw-bold">Tipos de Turismo</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card-category category-urbano shadow">
-            <h5 class="fw-bold">Turismo Urbano</h5>
-            <a href="#" class="text-white small">Ver más</a>
+          <div class="card h-100 shadow-sm card-product">
+            <div class="position-relative">
+              <img src="./images/centroHistorico.jpeg" class="card-img-top w-100" alt="Centro Historico">
+              <div class="position-absolute bottom-0 end-0 m-2">
+                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
+                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Turismo Urbano</h5>
+              <a href="#" style="text-decoration: none;">
+                <p class="card-text text-success">Ver mas</p>
+              </a>
+
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm card-product">
+            <div class="position-relative">
+              <img src="./images/suchitoto.jpg" class="card-img-top w-100" alt="Suchitoto">
+              <div class="position-absolute bottom-0 end-0 m-2">
+                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
+                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Turismo Rural</h5>
+              <a href="#" style="text-decoration: none;">
+                <p class="card-text text-success">Ver mas</p>
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="col-md-4">
-          <div class="card-category category-playa shadow">
-            <h5 class="fw-bold">Playas y Lagos</h5>
-            <a href="#" class="text-white small">Ver más</a>
+          <div class="card h-100 shadow-sm card-product">
+            <div class="position-relative">
+              <img src="./images/lagoCoatepeque.jpg" class="card-img-top w-100" alt="Lago Coatepeque">
+              <div class="position-absolute bottom-0 end-0 m-2">
+                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
+                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Turismo en Lagos</h5>
+              <a href="#" style="text-decoration: none;">
+                <p class="card-text text-success">Ver mas</p>
+              </a>
+              </div>
           </div>
         </div>
 
         <div class="col-md-4">
-          <div class="card-category category-montaña shadow">
-            <h5 class="fw-bold">Montañas</h5>
-            <a href="#" class="text-white small">Ver más</a>
+          <div class="card h-100 shadow-sm card-product">
+            <div class="position-relative">
+              <img src="./images/playaTunco.jpg" class="card-img-top w-100" alt="Playa el Tunco">
+              <div class="position-absolute bottom-0 end-0 m-2">
+                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
+                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Turismo en Playas</h5>
+              <a href="#" style="text-decoration: none;">
+                <p class="card-text text-success">Ver mas</p>
+              </a>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm card-product">
+            <div class="position-relative">
+              <img src="./images/cerroVerde.jpeg" class="card-img-top w-100" alt="Cerro Verde">
+              <div class="position-absolute bottom-0 end-0 m-2">
+                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
+                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Turismo en Montañas</h5>
+              <a href="#" style="text-decoration: none;">
+                <p class="card-text text-success">Ver mas</p>
+              </a>
+              </div>
           </div>
         </div>
     </section>
 
-    
-
-    <!-- Gallery -->
+        <!-- Gallery -->
     <!-- Carrusel de Turismo -->
 <section class="mb-5 container">
   <div id="carruselTurismo" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    
+
     <!-- Indicadores -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carruselTurismo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -229,7 +299,6 @@
     </button>
   </div>
 </section>
-
 
 
     <!-- Blogs -->
@@ -316,12 +385,9 @@
   </div>
 </footer>
 
-
-
   <!-- Bootstrap JS -->
   <script src="./js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
