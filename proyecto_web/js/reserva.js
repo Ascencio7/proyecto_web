@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => { // Esperar a que el DOM es
   const modalTitle = document.getElementById('reservaModalTitle');
   const modalBody = document.getElementById('reservaModalBody');
 
+  // Solo permitir números en el input del teléfono
+telefonoInput.addEventListener('input', () => {
+  telefonoInput.value = telefonoInput.value.replace(/\D/g, '');
+});
+
   // Cargar cambios para mostrar el costo estimado de la reserva
   [paqueteSelect, destinoSelect, adultosSelect, ninosSelect].forEach(el => {
     el.addEventListener('change', actualizarCostoEstimado);
@@ -51,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => { // Esperar a que el DOM es
 
     validarCampo(nombreInput, 'Ingresa tu nombre completo');
     validarCampo(emailInput, 'Ingresa tu correo electrónico', val => /^\S+@\S+\.\S+$/.test(val));
-    validarCampo(telefonoInput, 'Ingresa tu número de teléfono');
+    validarCampo(telefonoInput, 'Ingresa un número de teléfono válido (solo números)', val => /^[0-9]+$/.test(val));
     validarCampo(destinoSelect, 'Selecciona un destino', () => destinoSelect.selectedIndex !== 0);
     validarCampo(fechaLlegada, 'Ingresa una fecha de llegada');
     validarCampo(fechaSalida, 'Ingresa una fecha de salida');
