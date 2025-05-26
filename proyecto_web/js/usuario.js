@@ -44,9 +44,16 @@ mostrarDatosUsuario(loggedUser);
 
 // Función para cerrar sesión (llamada por el botón)
 function cerrarSesion() {
+  // Eliminar el usuario guardado en localStorage
   localStorage.removeItem('loggedUser');
-  mostrarDatosUsuario(null); // Mostrar datos como invitado
+
+  // Opcional: Actualizar la interfaz para mostrar usuario invitado o vacío
+  mostrarDatosUsuario(null);
+
+  // Redirigir a la página principal
+  window.location.href = '../index.html';
 }
+
 
 // Exponer la función para que pueda ser llamada desde el onclick del botón
 window.cerrarSesion = cerrarSesion;
