@@ -30,6 +30,7 @@
 
 .bloque:hover{
     transform: scale(1.05); 
+  background-color: #87addf;
 }
 
 
@@ -70,6 +71,13 @@
     font-size: 15px;
     color: #555;
     line-height: 1.5;
+    
+}
+
+.bloque:hover h3,
+.bloque:hover p, 
+.bloque:hover ul{
+    color: white;
 }
 
 .bloque ul {
@@ -130,7 +138,14 @@
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(10px);
+  background-color: #87addf;
+
+}
+
+.card:hover h3,
+.card:hover p {
+  color: white;
 }
 
 .card img {
@@ -151,7 +166,6 @@
 
 .puesto {
   font-weight: bold;
-  color: #28a745;
   margin-bottom: 10px;
 }
 
