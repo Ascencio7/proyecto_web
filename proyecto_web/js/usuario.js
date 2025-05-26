@@ -13,7 +13,7 @@ const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
 // Función para mostrar datos del usuario o invitado
 function mostrarDatosUsuario(user) {
   if (user) {
-    const capitalizedName = user.username.charAt(0).toUpperCase() + user.username.slice(1).toUpperCase();
+  const capitalizedName = user.username.toUpperCase();
     userNameSpan.textContent = capitalizedName;
     usernameInfo.textContent = user.username;
     emailInfo.textContent = user.correo || 'No proporcionado';
