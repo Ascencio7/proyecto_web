@@ -33,6 +33,32 @@ body {
 }
 /* Logo */
 
+/* Perfil de usuario */
+.dropdown-menu {
+  border-radius: 11px;
+  font-size: 14px;
+  min-width: 200px;
+  font-weight: bold;
+  color: #555;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.rounded-circle {
+  padding: 0;
+  object-fit: cover;
+}
+
+.navbar-nav .nav-link img {
+  margin-top: -2px;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+
 
 /* Banner */
 .banner {

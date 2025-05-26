@@ -23,75 +23,92 @@
 <body>
     
     <!-- Header -->
-  <header>
-    <div class="container-fluid bg-light py-2 border-bottom">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-4">
-            <div class="d-flex align-items-center">
-              <a href="../index.htm" >
-                <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
-              </a>
-              <!-- Icono de llamada eliminado xd -->
+    <header>
+      <div class="container-fluid bg-light py-2 border-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <div class="d-flex align-items-center">
+                <a href="../index.htm">
+                  <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
+                </a>
+              </div>
+            </div>
+    
+            <div class="col-md-4 text-center">
+              <div class="d-flex align-items-center justify-content-center">
+                <i class="bx bx-globe fs-2 text-primary me-2"></i>
+                <h1 class="m-0 fs-3 fw-bold">
+                  <a href="../index.htm" class="text-decoration-none">Turismo SV</a>
+                </h1>
+              </div>
             </div>
           </div>
-
-          <div class="col-md-4 text-center">
-            <div class="d-flex align-items-center justify-content-center">
-              <i class="bx bx-globe fs-2 text-primary me-2"></i>
-              <h1 class="m-0 fs-3 fw-bold"><a href="../index.htm" class="text-decoration-none">Turismo SV</a></h1>
-            </div>
+        </div>
+      </div>
+    
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link index px-3" href="../index.htm">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <select class="select-menu mx-3 my-1" onchange="location = this.value;">
+                  <option value="">TURISMO</option>
+                  <option value="../plantillas/urbano.html"></a>Urbano</option>
+                  <option value="../plantillas/rural.html">Rural</option>
+                  <option value="../plantillas/playas.html">Playas</option>
+                  <option value="../plantillas/lagos.html">Lagos</option>
+                  <option value="../plantillas/montanas.html">Montañas</option>
+                </select>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
+                    class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
+                  <li>
+                    <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
-
         </div>
-      </div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link index px-3" href="../index.htm">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <select class="select-menu mx-3 my-1" onchange="location = this.value;">
-                <option value="">TURISMO</option>
-                <option value="../plantillas/urbano.html"></a>Urbano</option>
-                <option value="../plantillas/rural.html">Rural</option>
-                <option value="../plantillas/playas.html">Playas</option>
-                <option value="../plantillas/lagos.html">Lagos</option>
-                <option value="../plantillas/montanas.html">Montañas</option>
-              </select>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
-            </li>
-          </ul>        
-        </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
   <!-- Banner -->
   <section class="banner d-flex align-items-center">
@@ -105,57 +122,58 @@
   <!-- Main Content -->
    <br>
   
-  
-     <!-- Footer -->
-<footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
-  <div class="container">
-    <div class="row text-center text-md-start align-items-center">
-      <!-- Logo -->
-      <div class="col-md-3 mb-4">
-        <a href="../index.htm">
-          <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
-        </a>
-      </div>
-
-      <!-- Sobre Nosotros -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
-        <p class="text-white-50 mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-        <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-      </div>
-
-      <!-- Redes Sociales -->
-      <div class="col-md-5 mb-4">
-        <h5 class="fw-bold text-uppercase">Síguenos</h5>
-        <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
-        </div>
-        <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
-          <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
-          <div class="text-start">
-            <div class="text-white small">Mayor información</div>
-            <div class="fw-bold text-white">+503 2258-5505</div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+      <div class="container">
+        <div class="row text-center text-md-start align-items-center">
+          <!-- Logo -->
+          <div class="col-md-3 mb-4">
+            <a href="../index.htm">
+              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
+            </a>
+          </div>
+    
+          <!-- Sobre Nosotros -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+            <p class="text-white-50 mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+            <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+          </div>
+    
+          <!-- Redes Sociales -->
+          <div class="col-md-5 mb-4">
+            <h5 class="fw-bold text-uppercase">Síguenos</h5>
+            <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+              <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
+              <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
+              <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
+              <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
+              <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
+              <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
+            </div>
+            <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+              <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+              <div class="text-start">
+                <div class="text-white small">Mayor información</div>
+                <div class="fw-bold text-white">+503 2258-5505</div>
+              </div>
+            </div>
           </div>
         </div>
+    
+        <hr class="border-secondary">
+        <!-- Derechos -->
+        <div class="text-center small text-muted">
+          &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
+        </div>
       </div>
-    </div>
-
-    <hr class="border-secondary">
-    <!-- Derechos -->
-    <div class="text-center small text-muted">
-      &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
-    </div>
-  </div>
-</footer>
+    </footer>
 
     <!-- Bootstrap JS -->
-  <script src="./js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/navbarUsuario.js"></script>
+    <script src="../js/usuario.js"></script>
 
 </body>
 </html>
