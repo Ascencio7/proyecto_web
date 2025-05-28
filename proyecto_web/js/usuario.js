@@ -73,3 +73,7 @@ if(userIcon && userDropdown) {
     }
   });
 }
+
+
+// Mostrara la fecha y hora de la ultima sesion
+document.getElementById("lastLogin").textContent = new Date().toLocaleString();
