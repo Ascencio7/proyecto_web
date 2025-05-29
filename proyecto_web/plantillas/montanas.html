@@ -1,32 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo en Montañas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Iconos Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <!-- Estilos CSS -->
-    <link href="../css/style.css" rel="stylesheet" />
-    <link href="../css/StyleMontanas.css" rel="stylesheet" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<html lang="es">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turismo en Lagos - Turismo Salvadoreño</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/styleLagos.css">
 </head>
 
-<style>
-    .banner {
-  background-image: url('../images/bannerMontana.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-  position: relative;
-  width: 100%;
-}
-</style>
-
 <body>
-    
   <!-- Header -->
   <header>
     <div class="container-fluid bg-light py-2 border-bottom">
@@ -39,7 +24,6 @@
               </a>
             </div>
           </div>
-  
           <div class="col-md-4 text-center">
             <div class="d-flex align-items-center justify-content-center">
               <i class="bx bx-globe fs-2 text-primary me-2"></i>
@@ -48,64 +32,45 @@
               </h1>
             </div>
           </div>
-  
         </div>
       </div>
     </div>
-  
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
+
         <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link index px-3" href="../index.htm">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <select class="select-menu mx-3 my-1" onchange="location = this.value;">
-                <option value="">TURISMO</option>
-                <option value="../plantillas/urbano.html"></a>Urbano</option>
-                <option value="../plantillas/rural.html">Rural</option>
-                <option value="../plantillas/playas.html">Playas</option>
-                <option value="../plantillas/lagos.html">Lagos</option>
-                <option value="../plantillas/montanas.html">Montañas</option>
-              </select>
+              <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">Turismo</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../plantillas/urbano.html">Urbano</a></li>
+                <li><a class="dropdown-item" href="../plantillas/rural.html">Rural</a></li>
+                <li><a class="dropdown-item" href="../plantillas/playas.html">Playas</a></li>
+                <li><a class="dropdown-item" href="../plantillas/lagos.html">Lagos</a></li>
+                <li><a class="dropdown-item" href="../plantillas/montanas.html">Montañas</a></li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
-            </li>
+            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesión</a></li>
             <li class="nav-item dropdown">
-              <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
-                  class="rounded-circle">
+              <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown">
+                <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil" class="rounded-circle">
               </a>
-              <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
-                <li>
-                  <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
+              <ul class="dropdown-menu dropdown-menu-end shadow">
+                <li><h6 class="dropdown-header" id="userEmail">usuario@example.com</h6></li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
                 <li><a class="dropdown-item" href="../index.htm" onclick="cerrarSesion()">Cerrar sesión</a></li>
               </ul>
@@ -121,17 +86,17 @@
     <div class="banner-overlay"></div>
     <div class="container text-white text-center banner-content">
       <p class="fs-4 mb-1">Explora El Salvador</p>
-      <h2 class="display-4 fw-bold mb-4">Turismo en <br>Montañas</h2>
+      <h2 class="display-4 fw-bold mb-4">Turismo en<br>Montañas</h2>
     </div>
   </section>
 
   <!-- Main Content -->
-   <div class="container-fluid py-5">
+  <div class="container-fluid py-5">
     <div class="container pt-5">
       <div class="row">
         <div class="col-lg-6" style="min-height: 700px;">
           <div class="position-relative h-100">
-            <img class="position-absolute w-100 h-100" src="../images/cerroVerde.jpeg" style="object-fit: cover;">
+            <img class="position-absolute w-100 h-100" src="../images/cerroVerde.jpeg" alt="Lago de Coatepeque" style="object-fit: cover;">
           </div>
         </div>
         <div class="col-lg-6 pt-5 pb-lg-5">
@@ -143,10 +108,10 @@
               Rodeadas de vegetación y vistas panorámicas, son perfectas para quienes buscan conectarse con la naturaleza y disfrutar de un entorno tranquilo y refrescante.</p>
             <div class="row mb-4">
               <div class="col-6">
-                <img class="img-fluid" src="../images/CerroPital.jpg" alt="">
+                <img class="img-fluid" src="../images/CerroPital.jpg" alt="Lago de Ilopango">
               </div>
               <div class="col-6">
-                <img class="img-fluid" src="../images/CerroJacinto.jpg" alt="">
+                <img class="img-fluid" src="../images/CerroJacinto.jpg" alt="Lago Güija">
               </div>
             </div>
           </div>
@@ -155,53 +120,39 @@
     </div>
   </div>
 
-
   <!-- Actividades -->
-<!-- Actividades en Montañas -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="text-center mb-4">
-      <h6 class="text-success text-uppercase" style="letter-spacing: 5px;">Actividades</h6>
-      <h2>
-        ¿Qué puedes hacer en las montañas?
-      </h2>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-3 mb-4">
-        <i class='bx bx-walk fs-1 text-success'></i>
-        <h5 class="mt-3">
-          Senderismo
-        </h5>
-        <p>Explora rutas ecológicas rodeadas de bosques, miradores y aire fresco.</p>
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Actividades</h6>
+        <h2>¿Qué puedes hacer en las montañas?</h2>
       </div>
-      <div class="col-md-3 mb-4">
-        <i class='bx bx-compass fs-1 text-warning'></i>
-        <h5 class="mt-3">
-          Camping
-        </h5>
-        <p>Acampa bajo las estrellas y disfruta de una noche en plena naturaleza.</p>
-      </div>
-      <div class="col-md-3 mb-4">
-        <i class='bx bx-zoom-in fs-1 text-primary'></i>
-        <h5 class="mt-3">
-          Avistamiento
-        </h5>
-        <p>Observa aves, animales silvestres y flora nativa en su entorno natural.</p>
-      </div>
-      <div class="col-md-3 mb-4">
-        <i class='bx bx-landscape fs-1 text-info'></i>
-        <h5 class="mt-3">
-          Paisajismo
-        </h5>
-        <p>Relájate contemplando valles, cimas y niebla matutina desde las alturas.</p>
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <i class='bx bx-walk fs-1 text-success'></i>
+          <h5 class="mt-3">Senderismo</h5>
+          <p>Explora rutas ecológicas rodeadas de bosques, miradores y aire fresco.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class='bx bx-compass fs-1 text-warning'></i>
+          <h5 class="mt-3">Camping</h5>
+          <p>Acampa bajo las estrellas y disfruta de una noche en plena naturaleza.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class='bx bx-zoom-in fs-1 text-primary'></i>
+          <h5 class="mt-3">Avistamiento</h5>
+          <p>Observa aves, animales silvestres y flora nativa en su entorno natural.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class='bx bx-landscape fs-1 text-info'></i>
+          <h5 class="mt-3">Paisajismo</h5>
+          <p>Relájate contemplando valles, cimas y niebla matutina desde las alturas.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-  <!-- Destination Start -->
+  <!-- Destinos -->
   <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
       <div class="text-center mb-3 pb-3">
@@ -211,101 +162,94 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="destination-item position-relative overflow-hidden mb-2">
-            <img class="img-fluid" src="../images/cerroVerde.jpeg" alt="">
+            <img class="img-fluid" src="../images/cerroVerde.jpeg" alt="Lago Coatepeque">
             <a class="destination-overlay text-white text-decoration-none">
-              <h5 class="text-white"> Cerro Verde</h5>
+              <h5 class="text-white">Cerro Verde</h5>
               <span>Santa Ana</span>
             </a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="destination-item position-relative overflow-hidden mb-2">
-            <img class="img-fluid" src="../images/CerroPital.jpg" alt="200">
+            <img class="img-fluid" src="../images/CerroPital.jpg" alt="Lago Ilopango">
             <a class="destination-overlay text-white text-decoration-none">
-              <h5 class="text-white">Cerro el Pital</h5>
-              <span> frontera entre El Salvador y Honduras</span>
+              <h5 class="text-white">Cerro el pital</h5>
+              <span>Frontera entre El Salvador y Honduras</span>
             </a>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="destination-item position-relative overflow-hidden mb-2">
-            <img class="img-fluid" src="../images/CerroJacinto.jpg" alt="200">
+            <img class="img-fluid" src="../images/CerroJacinto.jpg" alt="Lago Güija">
             <a class="destination-overlay text-white text-decoration-none">
               <h5 class="text-white">Cerro San Jacinto</h5>
               <span>San Salvador</span>
             </a>
           </div>
         </div>
-
-        <!-- Historia y datos curiosos: Cerros -->
-<section class="bg-light py-5">
-  <div class="container">
-    <div class="text-center mb-4">
-      <h6 class="text-success text-uppercase" style="letter-spacing: 5px;">Sabías que...</h6>
-      <h2>Curiosidades de nuestras montañas</h2>
+      </div>
     </div>
-    <ul class="list-group list-group-flush bg-white shadow p-4 rounded">
+  </div>
+
+  <!-- Curiosidades -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Sabías que...</h6>
+        <h2>Curiosidades de nuestras montañas</h2>
+      </div>
+         <ul class="list-group list-group-flush bg-white shadow p-4 rounded">
       <li class="list-group-item">🌿 El Cerro Verde forma parte de un complejo volcánico y ofrece senderos entre bosques nublados y orquídeas silvestres.</li>
       <li class="list-group-item">❄️ El Cerro El Pital es el punto más alto de El Salvador, donde incluso se han registrado temperaturas bajo cero.</li>
       <li class="list-group-item">🚡 El Cerro San Jacinto tuvo el primer teleférico de Centroamérica, activo entre los años 70 y 80.</li>
     </ul>
-  </div>
-</section>
+    </div>
+  </section>
 
-  
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
-      <div class="container">
-        <div class="row text-center text-md-start align-items-center">
-          <!-- Logo -->
-          <div class="col-md-3 mb-4">
-            <a href="../index.htm">
-              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
-            </a>
-          </div>
-    
-          <!-- Sobre Nosotros -->
-          <div class="col-md-4 mb-4">
-            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
-            <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la reserva de excursiones
-        turísticas hacia los destinos más fascinantes de nuestro país. </p>
-            <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.</p>
-          </div>
-    
-          <!-- Redes Sociales -->
-          <div class="col-md-5 mb-4">
-            <h5 class="fw-bold text-uppercase">Síguenos</h5>
-            <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
-              <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
-              <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
-              <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
-              <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
-              <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
-              <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
-            </div>
-            <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
-              <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
-              <div class="text-start">
-                <div class="text-white small">Mayor información</div>
-                <div class="fw-bold text-white">+503 2258-5505</div>
-              </div>
-            </div>
-          </div>
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center">
+        <div class="col-md-3 mb-4">
+          <a href="../index.htm">
+            <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
+          </a>
         </div>
-    
-        <hr class="border-secondary">
-        <!-- Derechos -->
-        <div class="text-center small text-muted">
-          &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+          <p class="text-white-50">Somos una empresa salvadoreña especializada en la reserva de excursiones turísticas hacia los destinos más fascinantes de nuestro país. Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas.</p>
+        </div>
+        <div class="col-md-5 mb-4">
+          <h5 class="fw-bold text-uppercase">Síguenos</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-youtube"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxs-envelope"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-whatsapp"></i></a>
+          </div>
+          <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+            <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+            <div class="text-start">
+              <div class="text-white small">Mayor información</div>
+              <div class="fw-bold text-white">+503 2258-5505</div>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+      <hr class="border-secondary" />
+      <div class="text-center small text-muted">
+        &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
+      </div>
+    </div>
+  </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="./js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/navbarUsuario.js"></script>
-    <script src="../js/usuario.js"></script>
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/navbarUsuario.js"></script>
+  <script src="../js/usuario.js"></script>
 </body>
+
 </html>
