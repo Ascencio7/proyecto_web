@@ -10,6 +10,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/styleResena.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -113,6 +114,111 @@
       </div>
     </section>
 
+    <!--Comentraios Recientes-->
+
+<div class="container">
+  <h2>Opiniones recientes</h2>
+  <div class="row">
+    <div class="col-md-3 mb-4">
+      <div class="card">
+        <img src="../images/perfil1.png" class="card-img-top rounded-circle" alt="David Hernández">
+        <div class="card-body">
+          <h5 class="card-title">David Hernández</h5>
+          <p class="card-text">Paquetes con precios justos para los lugares que ofrecen, ademas si posees una familia numerosa beneficia ya que los costos no son elevados. </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+      <div class="card">
+        <img src="../images/perfil2.png" class="card-img-top rounded-circle" alt="Esteban Leonardo Meneses">
+        <div class="card-body">
+          <h5 class="card-title">Esteban Leonardo Meneses</h5>
+          <p class="card-text">Buen ambiente en mi caso mis amigos no puedieron acompañarme pero en ningun momento me llegue a sentir excluido, y los lugares visitados son muy hermosos</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+      <div class="card">
+        <img src="../images/perfil3.png" class="card-img-top rounded-circle" alt="Carlos Castillo Sevillano">
+        <div class="card-body">
+          <h5 class="card-title">Carlos Castillo Sevillano</h5>
+          <p class="card-text">Buen trato, movilidad muy comoda dado a los lugares visitados.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+      <div class="card">
+        <img src="../images/perfil4.png" class="card-img-top rounded-circle" alt="Noelia Cuadrado Roman">
+        <div class="card-body">
+          <h5 class="card-title">Noelia Cuadrado Roman</h5>
+          <p class="card-text">Mi experiencia fue increíble. Buen trato de parte de todos los colaboradores de Turismo SV</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <!--Estructura del carrusel-->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold mb-3">Reseñas Inspiradoras</h2>
+      </div>
+    </div>
+<div id="comentariosCarrusel" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <div class="d-flex flex-column align-items-center">
+         <img src="../images/persona1.png" alt="Perfil de Juan Pérez" class="rounded-circle" style="width: 50px; height: 50px;">
+        <p class="fs-5">"El Salvador es un lugar increíble para visitar. La gente es muy amable y la comida es deliciosa!"</p>
+        <h5>- Juan Pérez</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="d-flex flex-column align-items-center">
+        <img src="../images/persona2.png" alt="Perfil de María López" class="rounded-circle" style="width: 50px; height: 50px;">
+        <p class="fs-5">"Tuve una experiencia maravillosa en las playas. Definitivamente volveré!"</p>
+        <h5>- María López</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="d-flex flex-column align-items-center">
+        <img src="../images/persona5.png" alt="Perfil de Carlos Gómez" class="rounded-circle" style="width: 50px; height: 50px;">
+        <p class="fs-5">"Las montañas son impresionantes. Un destino que no te puedes perder!"</p>
+        <h5>- Carlos Gómez</h5>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#comentariosCarrusel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#comentariosCarrusel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+<!--Añadir un nuevo comentario-->
+ <div class="container my-5">
+      <h3 class="text-center mb-4">Añadir un Nuevo Comentario</h3>
+      <form id="commentForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre:</label>
+          <input type="text" class="form-control" id="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">Comentario:</label>
+          <textarea class="form-control" id="comment" rows="3" placeholder="Tu comentario" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+      </form>
+    </div>
+    
     <!-- Footer -->
     <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
       <div class="container">
