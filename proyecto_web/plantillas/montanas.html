@@ -38,48 +38,67 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link index px-3" href="../index.htm">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">Turismo</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../plantillas/urbano.html">Urbano</a></li>
-                <li><a class="dropdown-item" href="../plantillas/rural.html">Rural</a></li>
-                <li><a class="dropdown-item" href="../plantillas/playas.html">Playas</a></li>
-                <li><a class="dropdown-item" href="../plantillas/lagos.html">Lagos</a></li>
-                <li><a class="dropdown-item" href="../plantillas/montanas.html">Montañas</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesión</a></li>
-            <li class="nav-item dropdown">
-              <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown">
-                <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil" class="rounded-circle">
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end shadow">
-                <li><h6 class="dropdown-header" id="userEmail">usuario@example.com</h6></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
-                <li><a class="dropdown-item" href="../index.htm" onclick="cerrarSesion()">Cerrar sesión</a></li>
-              </ul>
-            </li>
-          </ul>
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link index px-3" href="../index.htm">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <select class="select-menu mx-3 my-1" onchange="location = this.value;">
+                  <option value="">TURISMO</option>
+                  <option value="../plantillas/urbano.html"></a>Urbano</option>
+                  <option value="../plantillas/rural.html">Rural</option>
+                  <option value="../plantillas/playas.html">Playas</option>
+                  <option value="../plantillas/lagos.html">Lagos</option>
+                  <option value="../plantillas/montanas.html">Montañas</option>
+                </select>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
+              </li>
+    
+              <li class="nav-item dropdown">
+                <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
+                    class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
+                  <li>
+                    <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
+                  <li><a class="dropdown-item" href="../index.htm" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
   <!-- Banner -->
   <section class="banner d-flex align-items-center">
