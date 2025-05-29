@@ -114,6 +114,115 @@
       </div>
     </section>
 
+            <!-- Promocuones -->
+
+    <h1>Promociones Turísticas El Salvador</h1>
+
+
+<main>
+  <div class="contenedor-promocion">
+  <img src="../images/promoTunco.jpg" alt="Playa El Tunco" class="imagen-promocion">
+
+  <section class="promocion">
+    <h2>🌊 Playa El Tunco – Paquete “Sol y Arena”</h2>
+    <p><strong>Desde $99 por persona</strong></p>
+    <ul>
+      <li>Transporte ida y vuelta</li>
+      <li>Almuerzo frente al mar</li>
+      <li>Clase de surf</li>
+      <li>Show en vivo</li>
+    </ul>
+    <a href="reservas.html">Reservar ahora</a>
+    <a class="btn btn-success" onclick="mostrarVideo('../videos/videoTunco.mp4')">Más información</a>
+  </section> 
+
+</div>
+
+<!-- Modal de Video Informativo -->
+<div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="etiquetaModalVideo" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="etiquetaModalVideo">Video Informativo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <video id="videoPromocional" controls>
+            <source id="fuenteVideo" src="" type="video/mp4">
+            Tu navegador no soporta la reproducción de este video.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script para reproducir el video en el modal -->
+<script>
+  function mostrarVideo(ruta) {
+    const video = document.getElementById("videoPromocional");
+    const fuente = document.getElementById("fuenteVideo");
+    
+    fuente.src = ruta;
+    video.load();
+    
+    const modal = new bootstrap.Modal(document.getElementById("modalVideo"));
+    modal.show();
+  }
+</script>
+
+    <div class="contenedor-promocion">
+      <section class="promocion">
+      <h2>🌅 Lago de Coatepeque – Paquete “Atardecer en el Lago”</h2>
+      <p><strong>$149 por pareja</strong></p>
+      <ul>
+        <li>Paseo en lancha al atardecer</li>
+        <li>Cena romántica</li>
+        <li>Cabaña con jacuzzi</li>
+        <li>Desayuno incluido</li>
+      </ul>
+        <a href="reservas.html">Reservar ahora</a>
+        <a class="btn btn-success" onclick="mostrarVideo('../videos/videoLago.mp4')">Más información</a>
+
+      </section> 
+          <img src="../images/promoLago.jpg" alt="Playa El Tunco" class="imagen-promocion">
+    </div>
+
+    <div class="contenedor-promocion">
+          <img src="../images/promoCerro.jpg" alt="Playa El Tunco" class="imagen-promocion">
+
+  <section class="promocion">
+      <h2>🌿 Cerro Verde – Paquete “Exploradores del Bosque”</h2>
+      <p><strong>$89 por persona</strong></p>
+      <ul>
+        <li>Senderismo con guía</li>
+        <li>Picnic en la cima</li>
+        <li>Zipline y actividades infantiles</li>
+      </ul>
+    <a href="reservas.html">Reservar ahora</a>
+    <a class="btn btn-success" onclick="mostrarVideo('../videos/videoCerro.mp4')">Más información</a>
+
+  </section> </div>
+
+  <div class="contenedor-promocion">
+  <section class="promocion">
+    <h2>🌆 San Salvador – Paquete “Escapada Urbana”</h2>
+    <p><strong>$129 por pareja</strong></p>
+    <ul>
+      <li>1 noche en hotel boutique en Zona Rosa</li>
+      <li>Cena gourmet en restaurante de lujo</li>
+      <li>Tour nocturno por puntos icónicos de la ciudad</li>
+      <li>Desayuno tipo buffet incluido</li>
+    </ul>
+    <a href="reservas.html">Reservar ahora</a>
+    <a class="btn btn-success" onclick="mostrarVideo('../videos/videoUrbano.mp4')">Más información</a>
+
+  </section> 
+    <img src="../images/promoUrbano.jpg" alt="Playa El Tunco" class="imagen-promocion">
+</div>
+
+  </main>  
     <!-- Footer -->
     <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
       <div class="container">
