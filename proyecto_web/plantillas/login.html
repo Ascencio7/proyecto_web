@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +10,11 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styleLogin.css">
-
 </head>
 
 <body>
     
-    <!-- Header -->
+  <!-- Header -->
   <header>
     <div class="container-fluid bg-light py-2 border-bottom">
       <div class="container">
@@ -26,7 +24,6 @@
               <a href="../index.htm">
                 <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
               </a>
-              <!-- Icono de llamada eliminado xd -->
             </div>
           </div>
 
@@ -36,7 +33,6 @@
               <h1 class="m-0 fs-3 fw-bold"><a href="../index.htm" class="text-decoration-none">Turismo SV</a></h1>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -51,15 +47,12 @@
         <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link  px-3" href="../index.htm">Inicio</a>
+              <a class="nav-link px-3" href="../index.htm">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link index px-3" href="../plantillas/login.html">Iniciar Sesion</a>
             </li>
-          </ul>
-
-          <!-- Boton de buscar eliminado -->
-        
+          </ul>        
         </div>
       </div>
     </nav>
@@ -67,28 +60,28 @@
 
     <!-- Login -->
     <main class="flex-grow-1 d-flex justify-content-center align-items-center bg-light py-5">
-        <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
-            <h2 class="text-center mb-4">Iniciar Sesión</h2>
-            <form id="loginForm">
-                <div class="mb-3">
-                    <input type="text" class="form-control" id="username" placeholder="Usuario" required />
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" id="correo" placeholder="Correo" required />
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control" id="password" placeholder="Contraseña" required />
-                </div>
-                <div class="mb-3">
-                    <label for="profilePic" class="form-label">Foto de perfil (opcional):</label>
-                    <input type="file" class="form-control" id="profilePic" accept="image/*" />
-                </div>
-                <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-success">Entrar</button>
-                    <button type="button" class="btn btn-danger" id="cancelBtn">Cancelar</button>
-                </div>
-            </form>
-        </div>
+      <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4">Iniciar Sesión</h2>
+        <form id="loginForm">
+          <div class="mb-3">
+            <input type="text" class="form-control" id="username" placeholder="Usuario" required />
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" id="correo" placeholder="Correo" required />
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" required />
+          </div>
+          <div class="mb-3">
+            <label for="profilePic" class="form-label">Foto de perfil (opcional):</label>
+            <input type="file" class="form-control" id="profilePic" accept="image/*" />
+          </div>
+          
+          <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-success">Entrar</button>
+            <button type="button" class="btn btn-danger" id="cancelBtn">Cancelar</button>
+          </div>
+        </form>
     </main>
 
     <!-- Modal de mensajes -->
@@ -98,6 +91,7 @@
                 <p id="messageText"></p>
                 <button type="button" class="btn btn-primary mt-2" id="messageOkBtn" data-bs-dismiss="modal">OK</button>
             </div>
+            
         </div>
     </div>
 
@@ -112,59 +106,61 @@
         </div>
     </div>
 
+    
+
     <br><br>
 
   <!-- Footer -->
-<footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
-  <div class="container">
-    <div class="row text-center text-md-start align-items-center">
-      <!-- Logo -->
-      <div class="col-md-3 mb-4">
-        <a href="../index.htm">
-          <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
-        </a>
-      </div>
-
-      <!-- Sobre Nosotros -->
-      <div class="col-md-4 mb-4">
-        <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
-        <p class="text-white-50 mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-        <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-      </div>
-
-      <!-- Redes Sociales -->
-      <div class="col-md-5 mb-4">
-        <h5 class="fw-bold text-uppercase">Síguenos</h5>
-        <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
-          <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
+  <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center">
+        <!-- Logo -->
+        <div class="col-md-3 mb-4">
+          <a href="../index.htm">
+            <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
+          </a>
         </div>
-        <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
-          <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
-          <div class="text-start">
-            <div class="text-white small">Mayor información</div>
-            <div class="fw-bold text-white">+503 2258-5505</div>
+  
+        <!-- Sobre Nosotros -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+            <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la reserva de excursiones
+        turísticas hacia los destinos más fascinantes de nuestro país. </p>
+            <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.</p>
+          </div>
+  
+        <!-- Redes Sociales -->
+        <div class="col-md-5 mb-4">
+          <h5 class="fw-bold text-uppercase">Síguenos</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
+            <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
+          </div>
+          <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+            <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+            <div class="text-start">
+              <div class="text-white small">Mayor información</div>
+              <div class="fw-bold text-white">+503 2258-5505</div>
+            </div>
           </div>
         </div>
       </div>
+  
+      <hr class="border-secondary">
+      <!-- Derechos -->
+      <div class="text-center small text-muted">
+        &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
+      </div>
     </div>
+  </footer>
 
-    <hr class="border-secondary">
-    <!-- Derechos -->
-    <div class="text-center small text-muted">
-      &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
-    </div>
-  </div>
-</footer>
-
-
-    <script src="../js/script.js"></script>
-    <script src="../js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/login.js"></script>
 
 
 </body>

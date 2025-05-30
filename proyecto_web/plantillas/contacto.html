@@ -1,193 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Iconos Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Iconos Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link href="../css/style.css" rel="stylesheet" />
-<script src = "../js/contacto.js"></script>
-
-</head>
+  <style>
+    .banner {
+      background-image: url("../images/bannerContacto.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      position: relative;
+      width: 100%;
+    }
+  </style>
 
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container-fluid bg-light py-2 border-bottom">
+    
+    <!-- Header -->
+    <header>
+      <div class="container-fluid bg-light py-2 border-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <div class="d-flex align-items-center">
+                <a href="../index.htm">
+                  <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
+                </a>
+              </div>
+            </div>
+    
+            <div class="col-md-4 text-center">
+              <div class="d-flex align-items-center justify-content-center">
+                <i class="bx bx-globe fs-2 text-primary me-2"></i>
+                <h1 class="m-0 fs-3 fw-bold">
+                  <a href="../index.htm" class="text-decoration-none">Turismo SV</a>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../index.htm">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <select class="select-menu mx-3 my-1" onchange="location = this.value;">
+                  <option value="">TURISMO</option>
+                  <option value="../plantillas/urbano.html"></a>Urbano</option>
+                  <option value="../plantillas/rural.html">Rural</option>
+                  <option value="../plantillas/playas.html">Playas</option>
+                  <option value="../plantillas/lagos.html">Lagos</option>
+                  <option value="../plantillas/montanas.html">Montañas</option>
+                </select>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link index px-3" href="../plantillas/contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
+                    class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
+                  <li>
+                    <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
+                  <li><a class="dropdown-item" href="../index.htm" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- Banner -->
+    <section class="banner d-flex align-items-center">
+      <div class="banner-overlay"></div>
+      <div class="container text-white text-center banner-content">
+        <p class="fs-4 mb-1">Explora El Salvador</p>
+        <h2 class="display-4 fw-bold mb-4">
+          Escribiéndonos y<br />resolviendo tus dudas
+        </h2>
+      </div>
+    </section>
+    <!-- Sección de Contacto -->
+    <section class="py-5 bg-light">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-4">
-            <div class="d-flex align-items-center">
-              <a href="../index.htm">
-                <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
-              </a>
-              <!-- Icono de llamada eliminado xd -->
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3">Contáctanos</h2>
+        </div>
+        <div class="row g-4">
+          <!-- Información de Contacto -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <h5 class="fw-bold mb-4">Información de la Empresa</h5>
+              <p>
+                <i class="bx bx-map me-2 text-primary"></i> San Salvador, El
+                Salvador
+              </p>
+              <p>
+                <i class="bx bx-envelope me-2 text-primary"></i>
+                contacto@turismosv.com
+              </p>
+              <p>
+                <i class="bx bx-phone me-2 text-primary"></i> +503 2258-5505
+              </p>
+              <p>
+                <i class="bx bxl-whatsapp me-2 text-success"></i> +503 7123-4567
+              </p>
+              <p>
+                <i class="bx bx-time me-2 text-primary"></i> Lunes a Viernes:
+                8:00 AM - 5:00 PM
+              </p>
             </div>
           </div>
-
-          <div class="col-md-4 text-center">
-            <div class="d-flex align-items-center justify-content-center">
-              <i class="bx bx-globe fs-2 text-primary me-2"></i>
-              <h1 class="m-0 fs-3 fw-bold"><a href="../index.html" class="text-decoration-none">Turismo SV</a></h1>
+    
+          <!-- Formulario de Contacto -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <form>
+                <div class="mb-3">
+                  <label for="nombre" class="form-label fw-semibold">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required />
+                </div>
+                <div class="mb-3">
+                  <label for="correo" class="form-label fw-semibold">Correo Electrónico</label>
+                  <input type="email" class="form-control" id="correo" placeholder="ejemplo@correo.com" required />
+                </div>
+                <div class="mb-4">
+                  <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
+                  <textarea style="resize: none" class="form-control" id="mensaje" rows="5"
+                    placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                <div class="col-12 d-grid mt-3">
+                  <button type="submit" class="btn btn-success btn-lg">
+                    Enviar mensaje
+                  </button>
+                </div>
+                <!-- Mensaje de éxito (oculto inicialmente) -->
+                <div id="mensajeExito" class="alert alert-success mt-4 d-none" role="alert">
+                  ¡Tu mensaje ha sido enviado exitosamente!
+                </div>
+              </form>
             </div>
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
       <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../index.htm">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <select class="select-menu mx-3 my-1">
-                <option value="">TURISMO</option>
-                <option value="urbano">Urbano</option>
-                <option value="playas">Playas</option>
-                <option value="lagos">Lagos</option>
-                <option value="montanas">Montañas</option>
-              </select>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link index px-3" href="../plantillas/contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link promociones!!! aca deben colocar el nombre de la clase para mantener el color activo px-3"
-                href="../plantillas/promociones.html">Promociones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Sección de Contacto -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold mb-3">Contáctanos</h2>
-      </div>
-      <div class="row g-4">
-        <!-- Información de Contacto -->
-        <div class="col-md-6">
-          <div class="card shadow-sm border-0 h-100 p-4">
-            <h5 class="fw-bold mb-4">Información de la Empresa</h5>
-            <p><i class='bx bx-map me-2 text-primary'></i> San Salvador, El Salvador</p>
-            <p><i class='bx bx-envelope me-2 text-primary'></i> contacto@turismosv.com</p>
-            <p><i class='bx bx-phone me-2 text-primary'></i> +503 2258-5505</p>
-            <p><i class='bx bxl-whatsapp me-2 text-success'></i> +503 7123-4567</p>
-            <p><i class='bx bx-time me-2 text-primary'></i> Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+        <div class="row text-center text-md-start align-items-center">
+          <!-- Logo -->
+          <div class="col-md-3 mb-4">
+            <a href="../index.htm">
+              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
+            </a>
           </div>
-        </div>
-
-        <!-- Formulario de Contacto -->
-        <div class="col-md-6">
-          <div class="card shadow-sm border-0 h-100 p-4">
-            <form>
-
-              <div class="mb-3">
-                <label for="nombre" class="form-label fw-semibold">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required>
-              </div>
-              <div class="mb-3">
-                <label for="correo" class="form-label fw-semibold">Correo Electrónico</label>
-                <input type="email" class="form-control" id="correo" placeholder="ejemplo@correo.com" required>
-              </div>
-              <div class="mb-4">
-                <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
-                <textarea style="resize: none;" class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
-                  required></textarea>
-              </div>
-              <div class="col-12 d-grid mt-3">
-                <button type="submit" class="btn btn-success btn-lg">Enviar mensaje</button>
-              </div>
-              <!-- Mensaje de éxito (oculto inicialmente) -->
-              <div id="mensajeExito" class="alert alert-success mt-4 d-none" role="alert">
-                ¡Tu mensaje ha sido enviado exitosamente!
-              </div>
-            </form>
+    
+          <!-- Sobre Nosotros -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+            <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la reserva de excursiones
+        turísticas hacia los destinos más fascinantes de nuestro país. </p>
+            <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
-    <div class="container">
-      <div class="row text-center text-md-start align-items-center">
-        <!-- Logo -->
-        <div class="col-md-3 mb-4">
-          <a href="../index.htm">
-            <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px;">
-          </a>
-        </div>
-
-        <!-- Sobre Nosotros -->
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
-          <p class="text-white-50 mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-          <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-        </div>
-
-        <!-- Redes Sociales -->
-        <div class="col-md-5 mb-4">
-          <h5 class="fw-bold text-uppercase">Síguenos</h5>
-          <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
-            <a href="#" class="text-white hover-icon"><i class='bx bxl-facebook'></i></a>
-            <a href="#" class="text-white hover-icon"><i class='bx bxl-instagram'></i></a>
-            <a href="#" class="text-white hover-icon"><i class='bx bxl-twitter'></i></a>
-            <a href="#" class="text-white hover-icon"><i class='bx bxl-youtube'></i></a>
-            <a href="#" class="text-white hover-icon"><i class='bx bxs-envelope'></i></a>
-            <a href="#" class="text-white hover-icon"><i class='bx bxl-whatsapp'></i></a>
-          </div>
-          <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
-            <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
-            <div class="text-start">
-              <div class="text-white small">Mayor información</div>
-              <div class="fw-bold text-white">+503 2258-5505</div>
+    
+          <!-- Redes Sociales -->
+          <div class="col-md-5 mb-4">
+            <h5 class="fw-bold text-uppercase">Síguenos</h5>
+            <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-youtube"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxs-envelope"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-whatsapp"></i></a>
+            </div>
+            <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+              <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+              <div class="text-start">
+                <div class="text-white small">Mayor información</div>
+                <div class="fw-bold text-white">+503 2258-5505</div>
+              </div>
             </div>
           </div>
         </div>
+    
+        <hr class="border-secondary" />
+        <!-- Derechos -->
+        <div class="text-center small text-muted">
+          &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos
+          Reservados.
+        </div>
       </div>
+    </footer>
 
-      <hr class="border-secondary">
-      <!-- Derechos -->
-      <div class="text-center small text-muted">
-        &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos Reservados.
-      </div>
-    </div>
-  </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/navbarUsuario.js"></script>
+    <script src="../js/usuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/contacto.js"></script>
 
-
-</body>
-
+  </body>
 </html>

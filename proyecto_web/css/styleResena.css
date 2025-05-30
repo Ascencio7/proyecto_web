@@ -1,0 +1,33 @@
+.banner {
+  background-image: url('../images/bannerResena.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+.card-title, .card-text, .navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel-item {
+  text-align: center;
+  padding: 20px;
+}
+&nbsp
+&nbsp
+
+.carousel-item p {
+  font-style: italic;
+}
+
+.text-center {
+    text-align: center;
+}

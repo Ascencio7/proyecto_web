@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Iconos Boxicons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styleUsuario.css">
-
 </head>
 
-<body>
+  <style>
+    .banner {
+      background-image: url("../images/perfilPortada.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      position: relative;
+      width: 100%;
+    }
+  </style>
 
+<body>
     <!-- Header -->
     <header>
         <div class="container-fluid bg-light py-2 border-bottom">
@@ -23,33 +32,24 @@
                 <div class="row align-items-center">
                     <div class="col-md-4">
                         <div class="d-flex align-items-center">
-                            <i class="bx bx-phone-call fs-4 text-success me-2"></i>
-                            <div>
-                                <div class="text-muted small">Información</div>
-                                <div class="fw-bold">+503 2258-5505</div>
-                            </div>
+                            <a href="../index.htm">
+                                <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-header">
+                            </a>
                         </div>
                     </div>
-
+    
                     <div class="col-md-4 text-center">
                         <div class="d-flex align-items-center justify-content-center">
                             <i class="bx bx-globe fs-2 text-primary me-2"></i>
-                            <h1 class="m-0 fs-3 fw-bold"><a href="../index.htm" class="text-decoration-none">Turismo
-                                    SV</a></h1>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 text-end">
-                        <div class="d-flex justify-content-end gap-3">
-                            <a href="#" class="text-dark"><i class="bx bxl-facebook fs-4"></i></a>
-                            <a href="#" class="text-dark"><i class="bx bxl-instagram fs-4"></i></a>
-                            <a href="#" class="text-dark"><i class="bx bxl-twitter fs-4"></i></a>
+                            <h1 class="m-0 fs-3 fw-bold">
+                                <a href="../index.htm" class="text-decoration-none">Turismo SV</a>
+                            </h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
             <div class="container">
@@ -57,19 +57,20 @@
                     data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+                <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link px-3" href="../index.htm">Inicio</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <select class="select-menu mx-3 my-1">
+                            <select class="select-menu mx-3 my-1" onchange="location = this.value;">
                                 <option value="">TURISMO</option>
-                                <option value="urbano">Urbano</option>
-                                <option value="playas">Playas</option>
-                                <option value="lagos">Lagos</option>
-                                <option value="montanas">Montañas</option>
+                                <option value="../plantillas/urbano.html"></a>Urbano</option>
+                                <option value="../plantillas/rural.html">Rural</option>
+                                <option value="../plantillas/playas.html">Playas</option>
+                                <option value="../plantillas/lagos.html">Lagos</option>
+                                <option value="../plantillas/montanas.html">Montañas</option>
                             </select>
                         </li>
                         <li class="nav-item">
@@ -82,48 +83,138 @@
                             <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
+                            <a class="nav-link px-3" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link index px-3" href="../plantillas/usuario.html">Usuario</a>
+                            <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
+                                    class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
+                                <li>
+                                    <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
+                                <li><a class="dropdown-item" href="../index.htm" onclick="cerrarSesion()">Cerrar sesión</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </nav>
     </header>
 
+    <!-- Banner -->
+    <section class="banner d-flex align-items-center">
+        <div class="banner-overlay"></div>
+        <div class="container text-white text-center banner-content">
+            <p class="fs-4 mb-1">Mi Cuenta</p>
+            <h2 class="display-4 fw-bold mb-4">Aquí puedes ver <br>tus datos personales</h2>
+        </div>
+    </section>
+
+
     <!-- Caja con los datos del usuario -->
-    <div class="container my-5">
-        <div class="card text-center shadow mx-auto" style="max-width: 400px;">
-            <div class="card-body">
-                <h2 class="card-title mb-3">Bienvenido, <span id="userName">Usuario</span></h2>
-                <img id="profileImage" src="" alt="Foto de perfil" class="rounded-circle mb-3"
-                    style="width: 120px; height: 120px; object-fit: cover;" />
-                <p class="mb-2"><strong>Nombre de usuario:</strong><br><span id="usernameInfo">-</span></p>
-                <p class="mb-4"><strong>Correo:</strong> <span id="emailInfo">-</span></p>
-                <button onclick="logout()" class="btn btn-danger">Cerrar sesión</button> <!-- Boton para cerrar sesion -->
+    <div class="container my-5 d-flex justify-content-center">
+        <div class="container-user-bg">
+            <div class="card user-card shadow">
+                <div class="card-body">
+                    <h2 class="card-title mb-3">
+                        <i class="bi bi-person-check-fill me-2"></i><br>Bienvenido <br><span id="userName">Usuario</span>
+                    </h2>
+                    <img id="profileImage" src="" alt="Foto de perfil" class="rounded-circle mb-3 border border-3 border-light" style="width: 120px; height: 120px; object-fit: cover;" />
+                    
+                    <p class="mb-2">
+                        <i class="bi bi-person-circle me-1"></i>
+                        <strong>Nombre de usuario:</strong><br>
+                        <span id="usernameInfo">-</span>
+                    </p>
+    
+                    <p class="mb-2">
+                        <i class="bi bi-envelope-fill me-1"></i>
+                        <strong>Correo:</strong>
+                        <span id="emailInfo">-</span>
+                    </p>
+    
+                    <p class="mb-4" style="font-size: 0.9rem; color: white;">
+                        <i class="bi bi-clock-history me-1" style="color: white;"></i>
+                        <strong>Última sesión:</strong> <span id="lastLogin">--/--/----</span>
+                    </p>
+    
+                    <button onclick="cerrarSesion()" class="btn btn-danger btn-logout">
+                        <i class="bi bi-box-arrow-right me-1"></i> Cerrar sesión
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+    
 
     <!-- Footer -->
-    <footer class="footer text-center">
-        <div class="container">
-            <p class="mb-2">Turismo Salvadoreño - Todos los Derechos Reservados &copy; 2025</p>
-            <div class="d-flex justify-content-center gap-3 fs-4 mb-2">
-                <i class='bx bxl-facebook'></i>
-                <i class='bx bxl-instagram-alt'></i>
-                <i class='bx bxl-whatsapp'></i>
-                <i class='bx bxs-envelope'></i>
+    <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+      <div class="container">
+        <div class="row text-center text-md-start align-items-center">
+          <!-- Logo -->
+          <div class="col-md-3 mb-4">
+            <a href="../index.htm">
+              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
+            </a>
+          </div>
+    
+          <!-- Sobre Nosotros -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+            <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la reserva de excursiones
+        turísticas hacia los destinos más fascinantes de nuestro país. </p>
+            <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.</p>
+          </div>
+    
+          <!-- Redes Sociales -->
+          <div class="col-md-5 mb-4">
+            <h5 class="fw-bold text-uppercase">Síguenos</h5>
+            <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-youtube"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxs-envelope"></i></a>
+              <a href="#" class="text-white hover-icon"><i class="bx bxl-whatsapp"></i></a>
             </div>
-            <p class="mb-0">Síguenos en nuestras redes sociales</p>
+            <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+              <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+              <div class="text-start">
+                <div class="text-white small">Mayor información</div>
+                <div class="fw-bold text-white">+503 2258-5505</div>
+              </div>
+            </div>
+          </div>
         </div>
+    
+        <hr class="border-secondary" />
+        <!-- Derechos -->
+        <div class="text-center small text-muted">
+          &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos
+          Reservados.
+        </div>
+      </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/usuario.js"></script>
+    <script src="../js/navbarUsuario.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 </html>

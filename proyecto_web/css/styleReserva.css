@@ -65,3 +65,11 @@
      animation: spin 1s linear infinite;
  }
 
+.banner {
+  background-image: url('../images/bannerReservas.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
