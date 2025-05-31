@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
       navbarProfilePic.src = loggedUser.photo;
     } else {
       // Si no tiene foto, mostrar imagen por defecto
-      navbarProfilePic.src = '../pictureDefault/perfilLogoDefecto.jpg';
+      navbarProfilePic.src = './pictureDefault/perfilLogoDefecto.jpg';
     }
 
     // Mostrar correo
     userEmailDisplay.textContent = loggedUser.correo || 'No proporcionado'; // Si no hay correo, mostrar un mensaje por defecto
   } else {
-    // Si no hay usuario logueado, mostrar imagen por defecto y mensaje de invitado
-    //navbarProfilePic.src = '../pictureDefault/perfilLogoDefecto.jpg';
+    
     userEmailDisplay.textContent = 'Invitado';
   }
 });
