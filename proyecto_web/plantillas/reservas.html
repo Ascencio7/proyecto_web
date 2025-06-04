@@ -28,7 +28,7 @@
               </a>
             </div>
           </div>
-  
+
           <div class="col-md-4 text-center">
             <div class="d-flex align-items-center justify-content-center">
               <i class="bx bx-globe fs-2 text-primary me-2"></i>
@@ -40,15 +40,15 @@
         </div>
       </div>
     </div>
-  
-  
+
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
+
         <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -82,7 +82,7 @@
             <li class="nav-item">
               <a class="nav-link px-3" href="../plantillas/login.html">Iniciar Sesion</a>
             </li>
-  
+
             <li class="nav-item dropdown">
               <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -106,17 +106,17 @@
     </nav>
   </header>
 
-      <!-- Banner -->
-    <section class="banner d-flex align-items-center">
-      <div class="banner-overlay"></div>
-      <div class="container text-white text-center banner-content">
-        <p class="fs-4 mb-1">Explora El Salvador</p>
-        <h2 class="display-4 fw-bold mb-4">
-          Reservando tu<br />próxima escapada
-        </h2>
-      </div>
-    </section>
-    
+  <!-- Banner -->
+  <section class="banner d-flex align-items-center">
+    <div class="banner-overlay"></div>
+    <div class="container text-white text-center banner-content">
+      <p class="fs-4 mb-1">Explora El Salvador</p>
+      <h2 class="display-4 fw-bold mb-4">
+        Reservando tu<br />próxima escapada
+      </h2>
+    </div>
+  </section>
+
   <!-- Main Content -->
   <!-- Inicio de elementos de reservas -->
   <main class="container my-5">
@@ -149,11 +149,20 @@
         <div class="col-md-6">
           <label for="paquete" class="form-label">Selecciona paquete</label>
           <select class="form-select" id="paquete">
-            <option selected value="">Elige una opción</option>
-            <option value="eco-aventura" data-precio="149" data-incluye-adultos="2" data-incluye-ninos="2">Paquete Eco
-              Aventura</option>
-            <option value="relax" data-precio="199" data-incluye-adultos="2" data-incluye-ninos="0">Paquete Relax
+            <option selected disabled value="">Elige una opción</option>
+             <option value="ninguna">N/A</option>
+            <option value="eco-aventura" data-precio="149" data-incluye-adultos="2" data-incluye-ninos="2">Paquete "Eco
+              Aventura"</option>
+            <option value="relax" data-precio="199" data-incluye-adultos="2" data-incluye-ninos="0">Paquete "Relax"
             </option>
+            <option value="solArena" data-precio="99" data-incluye-adultos="1" data-incluye-ninos="0">Paquete "Sol y
+              Arena"</option>
+            <option value="atardecer" data-precio="149" data-incluye-adultos="2" data-incluye-ninos="0">Paquete
+              "Atardecer en el Lago"</option>
+            <option value="bosque" data-precio="89" data-incluye-adultos="1" data-incluye-ninos="0">Paquete
+              "Exploradores del Bosque"</option>
+            <option value="urbano" data-precio="129" data-incluye-adultos="2" data-incluye-ninos="0">Paquete "Escapada
+              Urbana"</option>
           </select>
         </div>
 
@@ -163,12 +172,14 @@
           <select class="form-select" id="destination" required>
 
             <option selected disabled value="">Seleccione un destino</option>
+            <option value="Ninguna opción">N/A</option>
             <option value="Playa El Tunco" data-precio="50">Playa El Tunco</option>
             <option value="Lago de Coatepeque" data-precio="75">Lago de Coatepeque</option>
             <option value="Cerro Verde" data-precio="65">Cerro Verde</option>
             <option value="Suchitoto" data-precio="60">Suchitoto</option>
             <option value="El Boquerón" data-precio="55">El Boquerón</option>
             <option value="Surf City" data-precio="45">Surf City</option>
+            <option value="Zona Rosa" data-precio="45">Zona Rosa</option>
           </select>
           <div class="invalid-feedback">Por favor selecciona un destino</div>
         </div>
@@ -198,7 +209,9 @@
             <option selected>0</option>
             <option>1</option>
             <option>2</option>
-            <option>3+</option>
+            <option>3</option>
+            <option>4</option>
+            <option>4+</option>
           </select>
         </div>
 
@@ -210,209 +223,215 @@
     </div>
     </div>
 
-    <!-- Destinos populares -->
-    <div class="row mb-5 mt-4">
-      <div class="col-12">
-        <h2 class="text-center mb-4 fw-bold">Destinos populares</h2>
+<!-- Destinos populares -->
+<div class="row mb-5 mt-4">
+  <div class="col-12">
+    <h2 class="text-center mb-4 fw-bold">Destinos populares</h2>
 
-        <!-- Primera fila de 3 tarjetas -->
-        <div class="row g-4 mb-4">
-          <!-- Card 1 -->
-          <div class="col-md-4">
-            <div class="card booking-card h-100">
-              <div class="position-relative">
-                <img src="../images/playaTunco.jpg" class="card-img-top destination-img" alt="Playa El Tunco">
-                <span class="price-badge">Desde $50</span>
+    <!-- Primera fila de 3 tarjetas -->
+    <div class="row g-4 mb-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card booking-card h-100">
+          <div class="position-relative">
+            <img src="../images/playaTunco.jpg" class="card-img-top destination-img" alt="Playa El Tunco">
+            <span class="price-badge">Desde $50</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Playa El Tunco</h5>
+            <p class="card-text">Disfruta de las mejores olas para surfear y atardeceres inolvidables en una de las playas más famosas de El Salvador.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bx bx-star text-warning"></i>
+                <span class="ms-1">4.8 (256)</span>
               </div>
-              <div class="card-body">
-                <h5 class="card-title">Playa El Tunco</h5>
-                <p class="card-text">Disfruta de las mejores olas para surfear y atardeceres inolvidables en una de las
-                  playas más famosas de El Salvador.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <i class="bx bx-star text-warning"></i>
-                    <span class="ms-1">4.8 (256)</span>
-                  </div>
-                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
-                </div>
-              </div>
+              <a href="#" class="btn btn-sm btn-outline-primary reservar-destino" 
+                 data-destino="Playa El Tunco"
+                 data-precio="50">Reservar ahora</a>
             </div>
           </div>
-
-          <!-- Card 2 -->
-          <div class="col-md-4">
-            <div class="card booking-card h-100">
-              <div class="position-relative">
-                <img src="../images/lagoCoatepeque.jpg" class="card-img-top destination-img" alt="Lago de Coatepeque">
-                <span class="price-badge">Desde $75</span>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Lago de Coatepeque</h5>
-                <p class="card-text">Un lago de origen volcánico con aguas cristalinas perfecto para nadar, pasear en
-                  kayak o simplemente relajarse.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <i class="bx bx-star text-warning"></i>
-                    <span class="ms-1">4.9 (189)</span>
-                  </div>
-                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="col-md-4">
-            <div class="card booking-card h-100">
-              <div class="position-relative">
-                <img src="../images/cerroVerde.jpeg" class="card-img-top destination-img" alt="Cerro Verde">
-                <span class="price-badge">Desde $65</span>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Cerro Verde</h5>
-                <p class="card-text">Disfruta de impresionantes vistas desde este volcán inactivo, rodeado de bosque
-                  nebuloso y senderos naturales en el Parque Nacional Los Volcanes.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <i class="bx bx-star text-warning"></i>
-                    <span class="ms-1">4.7 (312)</span>
-                  </div>
-                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- Fin primera fila -->
-
-        <!-- Segunda fila de 3 tarjetas -->
-        <div class="row g-4">
-          <!-- Card 4 -->
-          <div class="col-md-4">
-            <div class="card booking-card h-100">
-              <div class="position-relative">
-                <img src="../images/suchitoto.jpg" class="card-img-top destination-img" alt="Suchitoto">
-                <span class="price-badge">Desde $60</span>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Suchitoto</h5>
-                <p class="card-text">Encantadora ciudad colonial con calles empedradas, arte local y vistas al Lago
-                  Suchitlán, ideal para turismo cultural.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <i class="bx bx-star text-warning"></i>
-                    <span class="ms-1">4.6 (278)</span>
-                  </div>
-                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="col-md-4">
-            <div class="card booking-card h-100">
-              <div class="position-relative">
-                <img src="../images/el-boqueron.jpg" class="card-img-top destination-img" alt="ElBoquerón">
-                <span class="price-badge">Desde $55</span>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">El Boquerón</h5>
-                <p class="card-text">Parque nacional en el cráter del volcán de San Salvador, con senderos naturales y
-                  miradores a 1,800 metros de altura.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <i class="bx bx-star text-warning"></i>
-                    <span class="ms-1">4.8 (231)</span>
-                  </div>
-                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="col-md-4">
-            <div class="card booking-card h-100">
-              <div class="position-relative">
-                <img src="../images/surfCity.jpg" class="card-img-top destination-img" alt="SurfCity">
-                <span class="price-badge">Desde $45</span>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Surf City</h5>
-                <p class="card-text">Una zona costero-marítima de más de 300 kilómetros, con parque de diversiones y más
-                  de 20 competencias internacionales de surf.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <i class="bx bx-star text-warning"></i>
-                    <span class="ms-1">4.5 (198)</span>
-                  </div>
-                  <a href="#" class="btn btn-sm btn-outline-primary">Reservar ahora</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- Fin segunda fila -->
+        </div>
       </div>
-    </div>
 
-    <!-- Tipos de paquetes -->
-    <div class="row mb-5 mt-4">
-      <div class="col-12">
-        <h2 class="text-center mb-4 fw-bold">Paquetes turísticos</h2>
-        <div class="row g-4">
-          <!-- Paquete 1 -->
-          <div class="col-md-6">
-            <div class="card booking-card h-100">
-              <div class="row g-0">
-                <div class="col-md-5">
-                  <img src="../images/paq1.png" class="img-fluid rounded-start h-100" style="object-fit: cover;"
-                    alt="Aventura">
-                </div>
-                <div class="col-md-7">
-                  <div class="card-body">
-                    <h5 class="card-title">Paquete Eco Aventura</h5>
-                    <p class="card-text">Incluye: Reservaciones para 4 personas (dos adultos y dos niños), caminatas
-                      guiadas,
-                      visita a reservas naturales.</p>
-                    <ul class="list-unstyled">
-                      <li><i class="bx bx-check text-success me-2"></i> Guías expertos</li>
-                      <li><i class="bx bx-check text-success me-2"></i> Equipo incluido</li>
-                      <li><i class="bx bx-check text-success me-2"></i> Transporte privado</li>
-                    </ul>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                      <h4 class="mb-0 text-primary" data-precio="149">$ 149</h4>
-                      <a href="#" class="btn btn-primary">Reservar paquete</a>
-                    </div>
-                  </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card booking-card h-100">
+          <div class="position-relative">
+            <img src="../images/lagoCoatepeque.jpg" class="card-img-top destination-img" alt="Lago de Coatepeque">
+            <span class="price-badge">Desde $75</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Lago de Coatepeque</h5>
+            <p class="card-text">Un lago de origen volcánico con aguas cristalinas perfecto para nadar, pasear en kayak o simplemente relajarse.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bx bx-star text-warning"></i>
+                <span class="ms-1">4.9 (189)</span>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-primary reservar-destino"
+                 data-destino="Lago de Coatepeque"
+                 data-precio="75">Reservar ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card booking-card h-100">
+          <div class="position-relative">
+            <img src="../images/cerroVerde.jpeg" class="card-img-top destination-img" alt="Cerro Verde">
+            <span class="price-badge">Desde $65</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Cerro Verde</h5>
+            <p class="card-text">Disfruta de impresionantes vistas desde este volcán inactivo, rodeado de bosque nebuloso y senderos naturales en el Parque Nacional Los Volcanes.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bx bx-star text-warning"></i>
+                <span class="ms-1">4.7 (312)</span>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-primary reservar-destino"
+                 data-destino="Cerro Verde"
+                 data-precio="65">Reservar ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Fin primera fila -->
+
+    <!-- Segunda fila de 3 tarjetas -->
+    <div class="row g-4">
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card booking-card h-100">
+          <div class="position-relative">
+            <img src="../images/suchitoto.jpg" class="card-img-top destination-img" alt="Suchitoto">
+            <span class="price-badge">Desde $60</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Suchitoto</h5>
+            <p class="card-text">Encantadora ciudad colonial con calles empedradas, arte local y vistas al Lago Suchitlán, ideal para turismo cultural.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bx bx-star text-warning"></i>
+                <span class="ms-1">4.6 (278)</span>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-primary reservar-destino"
+                 data-destino="Suchitoto"
+                 data-precio="60">Reservar ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card booking-card h-100">
+          <div class="position-relative">
+            <img src="../images/el-boqueron.jpg" class="card-img-top destination-img" alt="ElBoquerón">
+            <span class="price-badge">Desde $55</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">El Boquerón</h5>
+            <p class="card-text">Parque nacional en el cráter del volcán de San Salvador, con senderos naturales y miradores a 1,800 metros de altura.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bx bx-star text-warning"></i>
+                <span class="ms-1">4.8 (231)</span>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-primary reservar-destino"
+                 data-destino="El Boquerón"
+                 data-precio="55">Reservar ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card booking-card h-100">
+          <div class="position-relative">
+            <img src="../images/surfCity.jpg" class="card-img-top destination-img" alt="SurfCity">
+            <span class="price-badge">Desde $45</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Surf City</h5>
+            <p class="card-text">Una zona costero-marítima de más de 300 kilómetros, con parque de diversiones y más de 20 competencias internacionales de surf.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bx bx-star text-warning"></i>
+                <span class="ms-1">4.5 (198)</span>
+              </div>
+              <a href="#" class="btn btn-sm btn-outline-primary reservar-destino"
+                 data-destino="Surf City"
+                 data-precio="45">Reservar ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Fin segunda fila -->
+  </div>
+</div>
+
+  <!-- Tipos de paquetes -->
+<div class="row mb-5 mt-4">
+  <div class="col-12">
+    <h2 class="text-center mb-4 fw-bold">Paquetes turísticos</h2>
+    <div class="row g-4">
+      <!-- Paquete 1 -->
+      <div class="col-md-6">
+        <div class="card booking-card h-100">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="../images/paq1.png" class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Aventura">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title">Paquete Eco Aventura</h5>
+                <p class="card-text">Incluye: Reservaciones para 4 personas (dos adultos y dos niños), caminatas guiadas, visita a reservas naturales.</p>
+                <ul class="list-unstyled">
+                  <li><i class="bx bx-check text-success me-2"></i> Guías expertos</li>
+                  <li><i class="bx bx-check text-success me-2"></i> Equipo incluido</li>
+                  <li><i class="bx bx-check text-success me-2"></i> Transporte privado</li>
+                </ul>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <h4 class="mb-0 text-primary" data-precio="149">$ 149</h4>
+                  <a href="#" class="btn btn-primary reservar-paquete" 
+                     data-paquete="eco-aventura"
+                     data-precio="149"
+                     data-adultos="2"
+                     data-ninos="2">Reservar paquete</a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- Paquete 2 -->
-          <div class="col-md-6">
-            <div class="card booking-card h-100">
-              <div class="row g-0">
-                <div class="col-md-5">
-                  <img src="../images/paq2.jpg" class="img-fluid rounded-start h-100" style="object-fit: cover;"
-                    alt="Relajación">
-                </div>
-                <div class="col-md-7">
-                  <div class="card-body">
-                    <h5 class="card-title">Paquete Relax</h5>
-                    <p class="card-text">Incluye: Reservaciones para dos personas, servicio de spa en playas, paseos en
-                      lancha por el lago y cenas gourmet con vista
-                      al mar.</p>
-                    <ul class="list-unstyled">
-                      <li><i class="bx bx-check text-success me-2"></i> Masajes incluidos</li>
-                      <li><i class="bx bx-check text-success me-2"></i> Alojamiento premium</li>
-                      <li><i class="bx bx-check text-success me-2"></i> Traslados privados</li>
-                    </ul>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                      <h4 class="mb-0 text-primary" data-precio="199">$ 199</h4>
-                      <a href="#" class="btn btn-primary">Reservar paquete</a>
-                    </div>
-                  </div>
+      <!-- Paquete 2 -->
+      <div class="col-md-6">
+        <div class="card booking-card h-100">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="../images/paq2.jpg" class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Relajación">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title">Paquete Relax</h5>
+                <p class="card-text">Incluye: Reservaciones para dos personas, servicio de spa en playas, paseos en lancha por el lago y cenas gourmet con vista al mar.</p>
+                <ul class="list-unstyled">
+                  <li><i class="bx bx-check text-success me-2"></i> Masajes incluidos</li>
+                  <li><i class="bx bx-check text-success me-2"></i> Alojamiento premium</li>
+                  <li><i class="bx bx-check text-success me-2"></i> Traslados privados</li>
+                </ul>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <h4 class="mb-0 text-primary" data-precio="199">$ 199</h4>
+                  <a href="#" class="btn btn-primary reservar-paquete"
+                     data-paquete="relax"
+                     data-precio="199"
+                     data-adultos="2"
+                     data-ninos="0">Reservar paquete</a>
                 </div>
               </div>
             </div>
@@ -420,7 +439,8 @@
         </div>
       </div>
     </div>
-
+  </div>
+</div>
     <!-- Preguntas frecuentes -->
     <div class="row mb-5">
       <div class="col-12">
@@ -494,12 +514,15 @@
         </div>
 
         <!-- Sobre Nosotros -->
-          <div class="col-md-4 mb-4">
-            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
-            <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la reserva de excursiones
-        turísticas hacia los destinos más fascinantes de nuestro país. </p>
-            <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.</p>
-          </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+          <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la
+            reserva de excursiones
+            turísticas hacia los destinos más fascinantes de nuestro país. </p>
+          <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales,
+            lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El
+            Salvador.</p>
+        </div>
 
         <!-- Redes Sociales -->
         <div class="col-md-5 mb-4">
@@ -550,6 +573,50 @@
   </div>
 
   <!-- Script de reservaciones -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const paquete = params.get('paquete');
+      const adultos = params.get('adultos');
+      const ninos = params.get('ninos');
+
+      if (paquete) {
+        const selectPaquete = document.getElementById('paquete');
+        if (selectPaquete) selectPaquete.value = paquete;
+      }
+
+      if (adultos) {
+        const selectAdultos = document.getElementById('adults');
+        if (selectAdultos) selectAdultos.value = adultos;
+      }
+
+      if (ninos) {
+        const selectNinos = document.getElementById('children');
+        if (selectNinos) selectNinos.value = ninos;
+      }
+
+      // BONUS: Asignar destino basado en paquete
+      const destinoMap = {
+        solArena: 'Playa El Tunco',
+        atardecer: 'Lago de Coatepeque',
+        bosque: 'Cerro Verde',
+        urbano: 'Zona Rosa',
+      };
+
+      const destino = destinoMap[paquete];
+      if (destino) {
+        const selectDestino = document.getElementById('destination');
+        if (selectDestino) {
+          for (let option of selectDestino.options) {
+            if (option.value === destino) {
+              option.selected = true;
+              break;
+            }
+          }
+        }
+      }
+    });
+  </script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -559,4 +626,5 @@
   <script src="../js/usuario.js"></script>
 
 </body>
+
 </html>

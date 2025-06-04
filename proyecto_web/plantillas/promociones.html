@@ -4,16 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Promociones</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Iconos Boxicons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-  <!-- Estilos CSS -->
   <link href="../css/style.css" rel="stylesheet" />
   <link href="../css/stylePromo.css" rel="stylesheet" />
 </head>
+<body>
 
-<body>    
+
   
   <!-- Header -->
   <header>
@@ -123,7 +121,7 @@
   <div class="contenedor-promocion">
   <img src="../images/promoTunco.jpg" alt="Playa El Tunco" class="imagen-promocion">
 
-  <section class="promocion">
+  <div class="promocion">
     <h2>🌊 Playa El Tunco – Paquete “Sol y Arena”</h2>
     <p><strong>Desde $99 por persona</strong></p>
     <ul>
@@ -132,9 +130,10 @@
       <li>Clase de surf</li>
       <li>Show en vivo</li>
     </ul>
-    <a href="reservas.html">Reservar ahora</a>
+ <a href="#" class="btn btn-primary reservar-btn" data-paquete="solArena" data-adultos="1" data-ninos="0">Reservar ahora</a>
+
     <a class="btn btn-success" onclick="mostrarVideo('../videos/videoTunco.mp4')">Más información</a>
-  </section> 
+  </div> 
 
 </div>
 
@@ -157,6 +156,46 @@
     </div>
   </div>
 </div>
+<!-- Script de redirección y modal combinado correctamente -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const reservaModalEl = document.getElementById('reservaModal');
+  const reservaModal = new bootstrap.Modal(reservaModalEl);
+  const modalTitle = reservaModalEl.querySelector('.modal-title');
+  const modalBody = reservaModalEl.querySelector('.modal-body');
+  const modalFooter = reservaModalEl.querySelector('.modal-footer');
+
+  document.querySelectorAll('.reservar-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.promocion');
+      const titulo = card.querySelector('h2')?.textContent?.trim();
+      const precio = card.querySelector('p strong')?.textContent?.trim();
+      const detalles = card.querySelector('ul')?.innerText?.trim();
+
+      modalTitle.textContent = 'Reserva de paquete';
+      modalBody.innerHTML = `
+        <div class="alert alert-info">
+          <p><i class="bx bx-package me-2"></i> <strong>Paquete:</strong> ${titulo}</p>
+          ${precio ? `<p><i class="bx bx-dollar me-2"></i> ${precio}</p>` : ''}
+          ${detalles ? `<p><i class="bx bx-detail me-2"></i> ${detalles.replace(/\n/g, '<br>')}</p>` : ''}
+          <hr><p class="mb-0">Haz clic en continuar para ir al formulario de reserva.</p>
+        </div>`;
+
+      const paquete = btn.dataset.paquete;
+      const adultos = btn.dataset.adultos || 1;
+      const ninos = btn.dataset.ninos || 0;
+
+      modalFooter.innerHTML = `
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="reservas.html?paquete=${encodeURIComponent(paquete)}&adultos=${adultos}&ninos=${ninos}" class="btn btn-primary">Ir al formulario</a>
+      `;
+
+      reservaModal.show();
+    });
+  });
+});
+</script>
 
 <!-- Script para reproducir el video en el modal -->
 <script>
@@ -182,7 +221,7 @@
         <li>Cabaña con jacuzzi</li>
         <li>Desayuno incluido</li>
       </ul>
-        <a href="reservas.html">Reservar ahora</a>
+     <a href="#" class="btn btn-primary reservar-btn" data-paquete="atardecer" data-adultos="2" data-ninos="0">Reservar ahora</a>
         <a class="btn btn-success" onclick="mostrarVideo('../videos/videoLago.mp4')">Más información</a>
 
       </section> 
@@ -200,7 +239,7 @@
         <li>Picnic en la cima</li>
         <li>Zipline y actividades infantiles</li>
       </ul>
-    <a href="reservas.html">Reservar ahora</a>
+     <a href="#" class="btn btn-primary reservar-btn" data-paquete="bosque" data-adultos="1" data-ninos="0">Reservar ahora</a>
     <a class="btn btn-success" onclick="mostrarVideo('../videos/videoCerro.mp4')">Más información</a>
 
   </section> </div>
@@ -215,7 +254,7 @@
       <li>Tour nocturno por puntos icónicos de la ciudad</li>
       <li>Desayuno tipo buffet incluido</li>
     </ul>
-    <a href="reservas.html">Reservar ahora</a>
+   <a href="#" class="btn btn-primary reservar-btn" data-paquete="urbano" data-adultos="2" data-ninos="0">Reservar ahora</a>
     <a class="btn btn-success" onclick="mostrarVideo('../videos/videoUrbano.mp4')">Más información</a>
 
   </section> 
@@ -271,6 +310,23 @@
         </div>
       </div>
     </footer>
+  <!-- Modal de Reserva Dinámica -->
+<div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reservaModalLabel">Reserva</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="reservaModalBody">
+        <!-- Contenido dinámico se insertará aquí -->
+      </div>
+      <div class="modal-footer">
+        <a href="reservas.html" class="btn btn-primary">Ir al formulario de reserva</a>
+      </div>
+    </div>
+  </div>
+</div>
 
      <script src="../js/script.js"></script>
     <script src="../js/navbarUsuario.js"></script>
@@ -278,4 +334,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   </body>
+
 </html>

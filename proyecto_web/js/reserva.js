@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => { // Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', () => {
+  // Elementos del formulario
   const reservaForm = document.getElementById('formReserva');
   const destinoSelect = document.getElementById('destination');
   const fechaLlegada = document.getElementById('check-in');
@@ -10,20 +11,141 @@ document.addEventListener('DOMContentLoaded', () => { // Esperar a que el DOM es
   const telefonoInput = document.getElementById('telefono');
   const paqueteSelect = document.getElementById('paquete');
 
+  // Modal
   const reservaModal = new bootstrap.Modal(document.getElementById('reservaModal'));
   const modalTitle = document.getElementById('reservaModalTitle');
   const modalBody = document.getElementById('reservaModalBody');
 
-  // Solo permitir números en el input del teléfono
-telefonoInput.addEventListener('input', () => {
-  telefonoInput.value = telefonoInput.value.replace(/\D/g, '');
-});
+  // Mapeo completo de paquetes a destinos recomendados
+  const paqueteDestinoMap = {
+    'eco-aventura': 'Cerro Verde',
+    'relax': 'Lago de Coatepeque',
+    'solArena': 'Playa El Tunco',
+    'atardecer': 'Lago de Coatepeque',
+    'bosque': 'Cerro Verde',
+    'urbano': 'Zona Rosa'
+  };
 
-  // Cargar cambios para mostrar el costo estimado de la reserva
+  // Cargar parámetros de URL
+  const params = new URLSearchParams(window.location.search);
+  const paqueteParam = params.get('paquete');
+  const adultosParam = params.get('adultos');
+  const ninosParam = params.get('ninos');
+
+  // Establecer valores iniciales desde parámetros URL
+  if (paqueteParam) {
+    paqueteSelect.value = paqueteParam;
+    if (paqueteDestinoMap[paqueteParam]) {
+      destinoSelect.value = paqueteDestinoMap[paqueteParam];
+    }
+  }
+
+  if (adultosParam) {
+    adultosSelect.value = adultosParam;
+  }
+
+  if (ninosParam) {
+    ninosSelect.value = ninosParam;
+  }
+
+  // Event listener para cambios en el select de paquete
+  paqueteSelect.addEventListener('change', function () {
+    const selectedOption = this.options[this.selectedIndex];
+    const paqueteId = selectedOption.value;
+
+
+
+    if (paqueteId === '' || paqueteId === 'ninguna') {
+      destinoSelect.value = '';
+      adultosSelect.value = '1';
+      ninosSelect.value = '0';
+      actualizarCostoEstimado();
+      return;
+    }
+
+    const precio = selectedOption.getAttribute('data-precio');
+    const adultosIncluidos = selectedOption.getAttribute('data-incluye-adultos');
+    const ninosIncluidos = selectedOption.getAttribute('data-incluye-ninos');
+
+    if (paqueteDestinoMap[paqueteId]) {
+      destinoSelect.value = paqueteDestinoMap[paqueteId];
+    }
+
+    adultosSelect.value = adultosIncluidos || '1';
+    ninosSelect.value = ninosIncluidos || '0';
+    actualizarCostoEstimado();
+  });
+  // Event listener para cambios en el select de destino
+  document.querySelectorAll('.reservar-destino').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const destino = this.getAttribute('data-destino');
+      const precio = this.getAttribute('data-precio');
+      // Actualizar el formulario
+      document.getElementById('destination').value = destino;
+      document.getElementById('paquete').value = 'ninguna';
+      document.getElementById('adults').value = '1';
+      document.getElementById('children').value = '0';
+
+      actualizarCostoEstimado();
+
+      // Mostrar modal de confirmación
+       modalTitle.textContent = 'Destino seleccionado';
+      modalBody.innerHTML = `
+        <div class="alert alert-success">
+          <p>Has seleccionado una reservación a: <strong>${this.closest('.card').querySelector('.card-title').textContent}</strong></p>
+          <p class="mb-0">Por favor, completa los demás detalles de tu reserva en el formulario.</p>
+        </div>
+      `;
+      reservaModal.show();
+
+      // Desplazarse al formulario
+      document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  // Event listener para botones de reserva de paquetes
+  document.querySelectorAll('.reservar-paquete').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const paquete = this.getAttribute('data-paquete');
+      const adultos = this.getAttribute('data-adultos');
+      const ninos = this.getAttribute('data-ninos');
+
+      document.getElementById('paquete').value = paquete;
+      document.getElementById('adults').value = adultos;
+      document.getElementById('children').value = ninos;
+
+      if (paqueteDestinoMap[paquete]) {
+        document.getElementById('destination').value = paqueteDestinoMap[paquete];
+      }
+
+      actualizarCostoEstimado();
+      document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
+
+      modalTitle.textContent = 'Paquete seleccionado';
+      modalBody.innerHTML = `
+        <div class="alert alert-success">
+          <p>Has seleccionado el paquete: <strong>${this.closest('.card').querySelector('.card-title').textContent}</strong></p>
+          <p class="mb-0">Por favor completa los demás detalles de tu reserva en el formulario.</p>
+        </div>
+      `;
+      reservaModal.show();
+    });
+  });
+
+  // Validación de teléfono
+  telefonoInput.addEventListener('input', () => {
+    telefonoInput.value = telefonoInput.value.replace(/\D/g, '');
+  });
+
+  // Event listeners para actualizar costo estimado
   [paqueteSelect, destinoSelect, adultosSelect, ninosSelect].forEach(el => {
     el.addEventListener('change', actualizarCostoEstimado);
   });
 
+  // Configurar fechas mínimas
   const today = new Date().toISOString().split('T')[0];
   fechaLlegada.min = fechaSalida.min = today;
 
@@ -33,6 +155,7 @@ telefonoInput.addEventListener('input', () => {
     }
   });
 
+  // Manejar envío del formulario
   reservaForm.addEventListener('submit', (e) => {
     e.preventDefault();
     if (validarFormulario()) {
@@ -40,7 +163,8 @@ telefonoInput.addEventListener('input', () => {
     }
   });
 
-  function validarFormulario() { // Validar el formulario antes de enviar y evitar el envío si hay errores
+  // Función para validar el formulario
+  function validarFormulario() {
     let valido = true;
     const errores = [];
 
@@ -86,7 +210,8 @@ telefonoInput.addEventListener('input', () => {
     return valido;
   }
 
-  function simularReserva() { // Simular el proceso de reserva  
+  // Función para simular el proceso de reserva
+  function simularReserva() {
     modalTitle.textContent = 'Procesando reserva...';
     modalBody.innerHTML = `
       <div class="text-center">
@@ -97,7 +222,7 @@ telefonoInput.addEventListener('input', () => {
       </div>`;
     reservaModal.show();
 
-    setTimeout(() => { // Simular un retraso en el procesamiento para enviar los datos al servidor
+    setTimeout(() => {
       const numeroReserva = 'RSV-' + Math.floor(100000 + Math.random() * 900000);
       const paqueteSeleccionado = paqueteSelect.selectedOptions[0];
       const destinoSeleccionado = destinoSelect.selectedOptions[0];
@@ -112,11 +237,11 @@ telefonoInput.addEventListener('input', () => {
       let precioBase = 0;
       let costoTotal = 0;
       let desglose = '';
-// Cálculo del costo total y desglose de precios
-      if (paqueteSelect.value !== "") {
-        precioBase = parseFloat(paqueteSeleccionado.dataset.precio) || 0;
-        incluyeAdultos = parseInt(paqueteSeleccionado.dataset.incluyeAdultos) || 0;
-        incluyeNinos = parseInt(paqueteSeleccionado.dataset.incluyeNinos) || 0;
+
+      if (paqueteSelect.value && paqueteSelect.value !== "ninguna") {
+        precioBase = parseFloat(paqueteSeleccionado.getAttribute('data-precio')) || 0;
+        incluyeAdultos = parseInt(paqueteSeleccionado.getAttribute('data-incluye-adultos')) || 0;
+        incluyeNinos = parseInt(paqueteSeleccionado.getAttribute('data-incluye-ninos')) || 0;
         paqueteNombre = paqueteSeleccionado.text;
 
         if (adultos <= incluyeAdultos && ninos <= incluyeNinos) {
@@ -125,26 +250,25 @@ telefonoInput.addEventListener('input', () => {
         } else {
           const extraAdultos = Math.max(adultos - incluyeAdultos, 0);
           const extraNinos = Math.max(ninos - incluyeNinos, 0);
-          const costoExtraAdultos = extraAdultos * (precioBase * 0.6); // 60% del precio base por extra del paquete
-          const costoExtraNinos = extraNinos * (precioBase * 0.5); // 50% del precio base por extra de niños
+          const costoExtraAdultos = extraAdultos * (precioBase * 0.6);
+          const costoExtraNinos = extraNinos * (precioBase * 0.5);
           costoTotal = precioBase + costoExtraAdultos + costoExtraNinos;
-// Desglose de precios
+
           desglose = `
             <li><strong>Base:</strong> $${precioBase.toFixed(2)} (Paquete)</li>
             ${extraAdultos > 0 ? `<li>${extraAdultos} adulto(s) extra x $${(precioBase * 0.6).toFixed(2)}: $${costoExtraAdultos.toFixed(2)}</li>` : ''}
             ${extraNinos > 0 ? `<li>${extraNinos} niño(s) extra x $${(precioBase * 0.5).toFixed(2)}: $${costoExtraNinos.toFixed(2)}</li>` : ''}
-
           `;
         }
-      } else {
-        const precioDestino = parseFloat(destinoSeleccionado.dataset.precio) || 0;
+      } else if (destinoSelect.value && destinoSelect.value !== "Ninguna opción") {
+        const precioDestino = parseFloat(destinoSeleccionado.getAttribute('data-precio')) || 0;
         costoTotal = (adultos * precioDestino) + (ninos * precioDestino * 0.5);
         desglose = `
           <li><strong>Adultos:</strong> ${adultos} x $${precioDestino.toFixed(2)} = $${(adultos * precioDestino).toFixed(2)}</li>
           ${ninos > 0 ? `<li><strong>Niños:</strong> ${ninos} x $${(precioDestino * 0.5).toFixed(2)} = $${(ninos * precioDestino * 0.5).toFixed(2)}</li>` : ''}
         `;
       }
-// Mostrar el resultado de la reserva en el modal
+
       modalTitle.innerHTML = '<i class="bx bx-check-circle text-success me-2"></i> ¡Reserva exitosa!';
       modalBody.innerHTML = `
         <div class="alert alert-success">
@@ -164,11 +288,12 @@ telefonoInput.addEventListener('input', () => {
           <p class="mb-0"><i class="bx bx-envelope me-2"></i> Te hemos enviado los detalles a tu correo electrónico.</p>
         </div>`;
       reservaForm.reset();
-      actualizarCostoEstimado(); // actualizar después del reset
+      actualizarCostoEstimado();
     }, 2000);
   }
 
-  function actualizarCostoEstimado() { // Actualizar el costo estimado de la reserva
+  // Función para actualizar el costo estimado
+  function actualizarCostoEstimado() {
     const paqueteSeleccionado = paqueteSelect.selectedOptions[0];
     const destinoSeleccionado = destinoSelect.selectedOptions[0];
     const adultos = parseInt(adultosSelect.value) || 0;
@@ -176,19 +301,19 @@ telefonoInput.addEventListener('input', () => {
 
     let costoTotal = 0;
 
-    if (paqueteSelect.value !== "") {
-      const precioBase = parseFloat(paqueteSeleccionado.dataset.precio) || 0;
-      const incluyeAdultos = parseInt(paqueteSeleccionado.dataset.incluyeAdultos) || 0;
-      const incluyeNinos = parseInt(paqueteSeleccionado.dataset.incluyeNinos) || 0;
+    if (paqueteSelect.value && paqueteSelect.value !== "ninguna") {
+      const precioBase = parseFloat(paqueteSeleccionado.getAttribute('data-precio')) || 0;
+      const incluyeAdultos = parseInt(paqueteSeleccionado.getAttribute('data-incluye-adultos')) || 0;
+      const incluyeNinos = parseInt(paqueteSeleccionado.getAttribute('data-incluye-ninos')) || 0;
 
       const extraAdultos = Math.max(adultos - incluyeAdultos, 0);
       const extraNinos = Math.max(ninos - incluyeNinos, 0);
 
-      const costoExtraAdultos = extraAdultos * (precioBase * 0.6); // 60% del precio base por extra del paquete
-      const costoExtraNinos = extraNinos * (precioBase * 0.5); // 50% del precio base por extra de niños
+      const costoExtraAdultos = extraAdultos * (precioBase * 0.6);
+      const costoExtraNinos = extraNinos * (precioBase * 0.5);
       costoTotal = precioBase + costoExtraAdultos + costoExtraNinos;
-    } else if (destinoSelect.value !== "") {
-      const precioDestino = parseFloat(destinoSeleccionado.dataset.precio) || 0;
+    } else if (destinoSelect.value && destinoSelect.value !== "Ninguna opción") {
+      const precioDestino = parseFloat(destinoSeleccionado.getAttribute('data-precio')) || 0;
       costoTotal = (adultos * precioDestino) + (ninos * precioDestino * 0.5);
     }
 
@@ -203,59 +328,36 @@ telefonoInput.addEventListener('input', () => {
     }
   }
 
-  function formatearFecha(fechaStr) { // Formatear la fecha al formato 'dd/mm/yyyy'
-    return new Date(fechaStr).toLocaleDateString('es-SV');
+  // Función para formatear fechas
+  function formatearFecha(fechaStr) {
+    if (!fechaStr) return '';
+    const fecha = new Date(fechaStr);
+    return fecha.toLocaleDateString('es-ES', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
   }
 
-  document.querySelectorAll('.btn-outline-primary, .btn-primary:not([type="submit"])').forEach(btn => {
+  // Event listeners para los botones de reserva rápida
+  document.querySelectorAll('.btn-outline-primary').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const card = btn.closest('.card');
       const titulo = card.querySelector('.card-title')?.textContent;
-      const precio = card.querySelector('.price-badge, h4')?.textContent;
-      const detalles = card.querySelector('.card-text')?.textContent;
 
-      const esDestino = btn.classList.contains('btn-outline-primary');
-
-      modalTitle.textContent = esDestino ? 'Reserva rápida' : 'Reserva de paquete';
-      modalBody.innerHTML = `
-        <div class="alert alert-info">
-          <p><i class="bx ${esDestino ? 'bx-info-circle' : 'bx-package'} me-2"></i> <strong>${esDestino ? 'Destino' : 'Paquete'}:</strong> ${titulo}</p>
-          ${precio ? `<p><i class="bx bx-dollar me-2"></i> ${precio}</p>` : ''}
-          ${detalles ? `<p><i class="bx bx-detail me-2"></i> ${detalles}</p>` : ''}
-          <hr><p class="mb-0">Serás redirigido al formulario de reserva completa.</p>
-        </div>`;
-      reservaModal.show();
-
-      if (esDestino) {
-        for (const option of destinoSelect.options) {
-          if (option.text.includes(titulo)) {
-            destinoSelect.value = option.value;
-            break;
-          }
-        }
-      } else {
-        for (const option of paqueteSelect.options) {
-          if (option.text.includes(titulo)) {
-            paqueteSelect.value = option.value;
-            adultosSelect.value = option.dataset.incluyeAdultos;
-            ninosSelect.value = option.dataset.incluyeNinos;
-            break;
-          }
+      for (const option of destinoSelect.options) {
+        if (option.text.includes(titulo)) {
+          destinoSelect.value = option.value;
+          break;
         }
       }
 
-      actualizarCostoEstimado(); // Actualizar el costo estimado al seleccionar un paquete o destino
-
-      const formSection = document.querySelector('.form-section');
-      if (formSection) {
-        setTimeout(() => {
-          formSection.scrollIntoView({ behavior: 'smooth' });
-        }, 1500);
-      }
+      actualizarCostoEstimado();
+      document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
     });
   });
 
-  // Mostrar costo estimado al cargar si ya hay valores por defecto
+  // Mostrar costo estimado al cargar
   actualizarCostoEstimado();
 });
