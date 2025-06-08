@@ -58,15 +58,16 @@ body {
   object-fit: cover;
 }
 
+
 /* Banner */
 .banner {
-  background-image: url('../images/urbano.png'); /* Modificado del HTML */
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-  position: relative;
-  width: 100%;
-}
+      background-image: url("../images/bannerLagos.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      position: relative;
+      width: 100%;
+    }
 
 .banner-overlay {
   position: absolute;
@@ -129,6 +130,14 @@ body {
   color: white;
   background-color: rgb(47, 105, 239);
   border-radius: 20px;
+}
+/* Ajustar los botones */
+.navbar-custom .nav-link.buttonfix-link {
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  min-width: 130px; /* Ajusta este valor según lo que necesites */
+  text-align: center;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
 .select-menu {
@@ -193,34 +202,49 @@ main {
 
 .destination-overlay {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  bottom: 30px;
-  left: 30px;
+  bottom: -50%; /* o -100% si usas height: 100% */
+  left: 0;
+  right: 0;
+  height: 50%; /* Ajusta al gusto: 50%, 70%, 100%, etc. */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  transition: bottom var(--transition);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  transition: .5s;
-  z-index: 1;
+  justify-content: flex-end;
+
 }
 
 .destination-item:hover .destination-overlay {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  border-width: 30px;
+  bottom: 0;
 }
+s
+.destination-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.destination-item img {
+  width: 100%;
+  height: 250px; /* o el tamaño que prefieras */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.destination-item:hover img {
+  transform: scale(1.1);
+}
+
 /* Íconos en cuadros de servicios tipo feature */
 .icon-box i {
   color: var(--primary-color);
 }
 
 
-/* Sobreposición del bloque de texto en About Us */
+/* Sobreposición del bloque de texto en quienes soms */
 .about-text {
   background-color: #fff;
   position: absolute;
@@ -317,12 +341,6 @@ main {
 .img-fluid:hover{
   transform: scale(1.05);
 }
-/* Footer */
-
-/* Esto permite que se mantenga en color activo segun la plantilla en la que se este 
-  deben colocar las clases de la plantilla en el html y en el css
-  Ahora se usa para todas las plantillas xD
-  */
 
 .index {
     background-color: rgb(47, 105, 239);
