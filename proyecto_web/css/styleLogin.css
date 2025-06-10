@@ -13,7 +13,6 @@
   color: #333;
 }
 
-
 #cancelBtn {
   background-color: #f44336;
   color: white;
@@ -37,7 +36,6 @@
   background-color: #d9534f;
   color: white;
   margin-bottom: 10px;
-
 }
 
 #yesBtn:hover {
@@ -72,5 +70,3 @@
   background-color: #ffebee;
   color: #c62828;
 }
-
-/* Esto permite que se mantenga en color activo segun la plantilla en la que se este */

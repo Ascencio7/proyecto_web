@@ -39,7 +39,7 @@
   
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
-      <div class="container">
+      <div class="container d-flex justify-content-between align-items-center">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +50,7 @@
               <a class="nav-link index px-3" href="./index.htm">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <select class="select-menu mx-3 my-1" onchange="location = this.value;">
+              <select class="select-menu nav-link" onchange="location = this.value;">
                 <option value="">TURISMO</option>
                 <option value="./plantillas/urbano.html"></a>Urbano</option>
                 <option value="./plantillas/rural.html">Rural</option>
@@ -81,8 +81,7 @@
             <li class="nav-item dropdown">
               <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <img id="navbarProfilePic" src="./pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
-                  class="rounded-circle">
+                <img id="navbarProfilePic" src="./pictureDefault/perfilLogoDefecto.jpg" alt="Perfil" class="rounded-circle">
               </a>
               <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
                 <li>
@@ -95,6 +94,7 @@
                 <li><a class="dropdown-item" href="./index.htm" onclick="cerrarSesion()">Cerrar sesión</a></li>
               </ul>
             </li>
+            
           </ul>
         </div>
       </div>

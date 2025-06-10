@@ -58,16 +58,15 @@ body {
   object-fit: cover;
 }
 
-
 /* Banner */
 .banner {
-      background-image: url("../images/bannerPlaya.jpg");
-      background-size: cover;
-      background-position: center;
-      height: 60vh;
-      position: relative;
-      width: 100%;
-    }
+  background-image: url("../images/bannerPlaya.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
 
 .banner-overlay {
   position: absolute;
@@ -153,15 +152,11 @@ body {
   background-color: rgb(47, 105, 239);
 }
 
-.card-feature,
-.card-product,
-.card-blog {
+.card-feature, .card-product, .card-blog {
   transition: transform var(--transition);
 }
 
-.card-feature:hover,
-.card-product:hover,
-.card-blog:hover {
+.card-feature:hover, .card-product:hover, .card-blog:hover {
   transform: translateY(-5px);
 }
 
@@ -170,8 +165,7 @@ body {
   color: var(--primary-color);
 }
 
-.card-product img,
-.card-blog img {
+.card-product img, .card-blog img {
   height: 200px;
   object-fit: cover;
 }
@@ -220,7 +214,7 @@ main {
 .destination-item:hover .destination-overlay {
   bottom: 0;
 }
-s
+
 .destination-item {
   position: relative;
   overflow: hidden;
@@ -244,7 +238,6 @@ s
   color: var(--primary-color);
 }
 
-
 /* Sobreposición del bloque de texto en quienes soms */
 .about-text {
   background-color: #fff;
@@ -258,14 +251,6 @@ s
   z-index: 10;
   max-width: 550px;
   width: 100%;
-}
-
-@media (max-width: 992px) {
-  .about-text {
-    position: static;
-    transform: none;
-    margin-top: 1rem;
-  }
 }
 
 /* Asegura que el contenedor que aloja la imagen tenga posicionamiento relativo */
@@ -344,11 +329,12 @@ s
 }
 
 .index {
-    background-color: rgb(47, 105, 239);
-    color: #fff;
-    font-weight: bold;
-    box-shadow: inset 0 0 0 2px var(--light-gray);
+  background-color: rgb(47, 105, 239);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 2px var(--light-gray);
 }
+
 /* BLOG SECTION STYLES */
 .blog-item {
   transition: transform 0.3s;
@@ -391,4 +377,12 @@ s
 .blog-item .p-4 {
   background-color: white;
   border-radius: 0 0 10px 10px;
+}
+
+@media (max-width: 992px) {
+  .about-text {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
 }
