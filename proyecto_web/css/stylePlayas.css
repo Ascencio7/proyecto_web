@@ -59,7 +59,7 @@ body {
 }
 
 /* Banner */
-.banner {
+.bannerPlayas {
   background-image: url("../images/bannerPlaya.jpg");
   background-size: cover;
   background-position: center;
@@ -384,5 +384,57 @@ main {
     position: static;
     transform: none;
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-toggler{
+    margin-right: auto;
+    margin-left: 0.5rem;
+    z-index: 1051;
+  }
+
+  .navbar-custom .navbar-nav{
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .select-menu{
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .select-menu:focus{
+    outline: none;
+  }
+
+  .nav-item{
+    margin-bottom: 12px;
+  }
+
+  #userDropdownBtn{
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #userDropdownBtn img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
+
+  .dropdown-menu{
+    text-align: center;
+    width: 100%;
   }
 }
