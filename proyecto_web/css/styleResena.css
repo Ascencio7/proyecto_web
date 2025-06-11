@@ -20,8 +20,18 @@ h2{
   text-align: center;
 }
 
+.card{
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover{
+  transform:scale(1.03);
+  box-shadow: 7px 5px 4px #333;
+}
+
 .card-title, .card-text, .navbar-nav .nav-link {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .carousel-item {
