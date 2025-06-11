@@ -385,6 +385,7 @@ main {
   border-radius: 0 0 10px 10px;
 }
 
+<<<<<<< HEAD
 .index {
   background-color: rgb(47, 105, 239);
   color: #fff;
@@ -392,6 +393,8 @@ main {
   box-shadow: inset 0 0 0 2px var(--light-gray);
 }
 
+=======
+>>>>>>> 1a61ab5ebca802ed738f5642d3db46c4282a1668
 @media (max-width: 992px) {
   .about-text {
     position: static;

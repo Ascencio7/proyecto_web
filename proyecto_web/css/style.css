@@ -150,6 +150,7 @@ text-align: center;
   background-color: var(--primary-color);
   color: white;
   border: none;
+<<<<<<< HEAD
   border-radius: 5px;
   padding: 0.4rem 1rem;
   margin-top: 2%;
@@ -160,6 +161,12 @@ text-align: center;
 }
 
 
+=======
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+>>>>>>> 1a61ab5ebca802ed738f5642d3db46c4282a1668
 .select-menu:focus{
   outline: none;
 }
