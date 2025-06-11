@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const users = [
     // Datos de ejemplo de usuarios
     { username: 'vladimir ascencio', correo: 'ascencio3.45@gmail.com', password: '1234' },
-    { username: 'ruth', correo: 'ruth12@turismosv.com', password: 'admin' }
+    { username: 'ruth', correo: 'ruth12@turismosv.com', password: 'admin' },
+    { username: 'Emir Alvarado', correo: 'alex24@turismo.sv', password: '198623' }
   ];
 
   // Obtener los elementos del DOM

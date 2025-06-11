@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navbarProfilePic.src = loggedUser.photo;
     } else {
       // Si no tiene foto, mostrar imagen por defecto
-      navbarProfilePic.src = './pictureDefault/perfilLogoDefecto.jpg';
+     // navbarProfilePic.src = './pictureDefault/perfilLogoDefecto.jpg';
     }
 
     // Mostrar correo
