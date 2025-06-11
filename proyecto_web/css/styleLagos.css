@@ -61,13 +61,13 @@ body {
 
 /* Banner */
 .banner {
-      background-image: url("../images/bannerLagos.jpg");
-      background-size: cover;
-      background-position: center;
-      height: 60vh;
-      position: relative;
-      width: 100%;
-    }
+  background-image: url("../images/bannerLagos.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
 
 .banner-overlay {
   position: absolute;
@@ -123,7 +123,11 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   border-radius: 20px;
-  margin-left: 3px;
+  margin-left: 5px; /* Esto separa un poco los botones entre si */
+}
+
+.turismo{
+text-align: center;
 }
 
 .navbar-custom .nav-link:hover {
@@ -131,6 +135,7 @@ body {
   background-color: rgb(47, 105, 239);
   border-radius: 20px;
 }
+
 /* Ajustar los botones */
 .navbar-custom .nav-link.buttonfix-link {
   white-space: nowrap; /* Evita que el texto se divida en varias líneas */
@@ -202,10 +207,10 @@ main {
 
 .destination-overlay {
   position: absolute;
-  bottom: -50%; /* o -100% si usas height: 100% */
+  bottom: -50%; 
   left: 0;
   right: 0;
-  height: 50%; /* Ajusta al gusto: 50%, 70%, 100%, etc. */
+  height: 50%;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 15px;
@@ -219,7 +224,7 @@ main {
 .destination-item:hover .destination-overlay {
   bottom: 0;
 }
-s
+
 .destination-item {
   position: relative;
   overflow: hidden;
@@ -229,7 +234,7 @@ s
 
 .destination-item img {
   width: 100%;
-  height: 250px; /* o el tamaño que prefieras */
+  height: 250px; 
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -243,8 +248,7 @@ s
   color: var(--primary-color);
 }
 
-
-/* Sobreposición del bloque de texto en quienes soms */
+/* Sobreposición del bloque de texto en quienes somos */
 .about-text {
   background-color: #fff;
   position: absolute;
@@ -257,14 +261,6 @@ s
   z-index: 10;
   max-width: 550px;
   width: 100%;
-}
-
-@media (max-width: 992px) {
-  .about-text {
-    position: static;
-    transform: none;
-    margin-top: 1rem;
-  }
 }
 
 /* Asegura que el contenedor que aloja la imagen tenga posicionamiento relativo */
@@ -342,12 +338,6 @@ s
   transform: scale(1.05);
 }
 
-.index {
-    background-color: rgb(47, 105, 239);
-    color: #fff;
-    font-weight: bold;
-    box-shadow: inset 0 0 0 2px var(--light-gray);
-}
 /* BLOG SECTION STYLES */
 .blog-item {
   transition: transform 0.3s;
@@ -390,4 +380,21 @@ s
 .blog-item .p-4 {
   background-color: white;
   border-radius: 0 0 10px 10px;
+}
+
+
+@media (max-width: 992px) {
+  .about-text {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+}
+
+/* Esto permite que se mantenga en color activo segun la plantilla en la que se este */
+.index {
+  background-color: rgb(47, 105, 239);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 2px var(--light-gray);
 }

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Promociones</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <title>Turismo SV | Promociones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link href="../css/style.css" rel="stylesheet" />
   <link href="../css/stylePromo.css" rel="stylesheet" />
 </head>
+
 <body>
 
 
-  
+
   <!-- Header -->
   <header>
     <div class="container-fluid bg-light py-2 border-bottom">
@@ -25,7 +27,7 @@
               </a>
             </div>
           </div>
-  
+
           <div class="col-md-4 text-center">
             <div class="d-flex align-items-center justify-content-center">
               <i class="bx bx-globe fs-2 text-primary me-2"></i>
@@ -37,22 +39,22 @@
         </div>
       </div>
     </div>
-  
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link px-3" href="../index.htm">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <select class="select-menu mx-3 my-1" onchange="location = this.value;">
-                <option value="">TURISMO</option>
+              <select class="select-menu nav-link" onchange="location = this.value;">
+                <option value="" class="turismo">TURISMO</option>
                 <option value="../plantillas/urbano.html"></a>Urbano</option>
                 <option value="../plantillas/rural.html">Rural</option>
                 <option value="../plantillas/playas.html">Playas</option>
@@ -99,82 +101,83 @@
         </div>
       </div>
     </nav>
-    </header>
+  </header>
 
-    <!-- Banner -->
-    <section class="banner d-flex align-items-center">
-      <div class="banner-overlay"></div>
-      <div class="container text-white text-center banner-content">
-        <p class="fs-4 mb-1">Explora El Salvador</p>
-        <h2 class="display-4 fw-bold mb-4">
-          Aprovechando nuestras<br />mejores ofertas
-        </h2>
+  <!-- Banner -->
+  <section class="banner d-flex align-items-center">
+    <div class="banner-overlay"></div>
+    <div class="container text-white text-center banner-content">
+      <p class="fs-4 mb-1">Explora El Salvador</p>
+      <h2 class="display-4 fw-bold mb-4">
+        Aprovechando nuestras<br />mejores ofertas
+      </h2>
+    </div>
+  </section>
+
+  <!-- Promocuones -->
+
+  <h1>Promociones Turísticas El Salvador</h1>
+
+
+  <main>
+    <div class="contenedor-promocion">
+      <img src="../images/promoTunco.jpg" alt="Playa El Tunco" class="imagen-promocion">
+
+      <div class="promocion">
+        <h2>🌊 Playa El Tunco – Paquete “Sol y Arena”</h2>
+        <p><strong>Desde $99 por persona</strong></p>
+        <ul>
+          <li>Transporte ida y vuelta</li>
+          <li>Almuerzo frente al mar</li>
+          <li>Clase de surf</li>
+          <li>Show en vivo</li>
+        </ul>
+        <a href="#" class="btn btn-primary reservar-btn" data-paquete="solArena" data-adultos="1"
+          data-ninos="0">Reservar ahora</a>
+
+        <a class="btn btn-success" onclick="mostrarVideo('../videos/videoTunco.mp4')">Más información</a>
       </div>
-    </section>
 
-            <!-- Promocuones -->
+    </div>
 
-    <h1>Promociones Turísticas El Salvador</h1>
-
-
-<main>
-  <div class="contenedor-promocion">
-  <img src="../images/promoTunco.jpg" alt="Playa El Tunco" class="imagen-promocion">
-
-  <div class="promocion">
-    <h2>🌊 Playa El Tunco – Paquete “Sol y Arena”</h2>
-    <p><strong>Desde $99 por persona</strong></p>
-    <ul>
-      <li>Transporte ida y vuelta</li>
-      <li>Almuerzo frente al mar</li>
-      <li>Clase de surf</li>
-      <li>Show en vivo</li>
-    </ul>
- <a href="#" class="btn btn-primary reservar-btn" data-paquete="solArena" data-adultos="1" data-ninos="0">Reservar ahora</a>
-
-    <a class="btn btn-success" onclick="mostrarVideo('../videos/videoTunco.mp4')">Más información</a>
-  </div> 
-
-</div>
-
-<!-- Modal de Video Informativo -->
-<div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="etiquetaModalVideo" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="etiquetaModalVideo">Video Informativo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <div class="ratio ratio-16x9">
-          <video id="videoPromocional" controls>
-            <source id="fuenteVideo" src="" type="video/mp4">
-            Tu navegador no soporta la reproducción de este video.
-          </video>
+    <!-- Modal de Video Informativo -->
+    <div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="etiquetaModalVideo" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="etiquetaModalVideo">Video Informativo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="ratio ratio-16x9">
+              <video id="videoPromocional" controls>
+                <source id="fuenteVideo" src="" type="video/mp4">
+                Tu navegador no soporta la reproducción de este video.
+              </video>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Script de redirección y modal combinado correctamente -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const reservaModalEl = document.getElementById('reservaModal');
-  const reservaModal = new bootstrap.Modal(reservaModalEl);
-  const modalTitle = reservaModalEl.querySelector('.modal-title');
-  const modalBody = reservaModalEl.querySelector('.modal-body');
-  const modalFooter = reservaModalEl.querySelector('.modal-footer');
+    <!-- Script de redirección y modal combinado correctamente -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const reservaModalEl = document.getElementById('reservaModal');
+        const reservaModal = new bootstrap.Modal(reservaModalEl);
+        const modalTitle = reservaModalEl.querySelector('.modal-title');
+        const modalBody = reservaModalEl.querySelector('.modal-body');
+        const modalFooter = reservaModalEl.querySelector('.modal-footer');
 
-  document.querySelectorAll('.reservar-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const card = btn.closest('.promocion');
-      const titulo = card.querySelector('h2')?.textContent?.trim();
-      const precio = card.querySelector('p strong')?.textContent?.trim();
-      const detalles = card.querySelector('ul')?.innerText?.trim();
+        document.querySelectorAll('.reservar-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = btn.closest('.promocion');
+            const titulo = card.querySelector('h2')?.textContent?.trim();
+            const precio = card.querySelector('p strong')?.textContent?.trim();
+            const detalles = card.querySelector('ul')?.innerText?.trim();
 
-      modalTitle.textContent = 'Reserva de paquete';
-      modalBody.innerHTML = `
+            modalTitle.textContent = 'Reserva de paquete';
+            modalBody.innerHTML = `
         <div class="alert alert-info">
           <p><i class="bx bx-package me-2"></i> <strong>Paquete:</strong> ${titulo}</p>
           ${precio ? `<p><i class="bx bx-dollar me-2"></i> ${precio}</p>` : ''}
@@ -182,157 +185,164 @@ document.addEventListener('DOMContentLoaded', () => {
           <hr><p class="mb-0">Haz clic en continuar para ir al formulario de reserva.</p>
         </div>`;
 
-      const paquete = btn.dataset.paquete;
-      const adultos = btn.dataset.adultos || 1;
-      const ninos = btn.dataset.ninos || 0;
+            const paquete = btn.dataset.paquete;
+            const adultos = btn.dataset.adultos || 1;
+            const ninos = btn.dataset.ninos || 0;
 
-      modalFooter.innerHTML = `
+            modalFooter.innerHTML = `
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <a href="reservas.html?paquete=${encodeURIComponent(paquete)}&adultos=${adultos}&ninos=${ninos}" class="btn btn-primary">Ir al formulario</a>
       `;
 
-      reservaModal.show();
-    });
-  });
-});
-</script>
+            reservaModal.show();
+          });
+        });
+      });
+    </script>
 
-<!-- Script para reproducir el video en el modal -->
-<script>
-  function mostrarVideo(ruta) {
-    const video = document.getElementById("videoPromocional");
-    const fuente = document.getElementById("fuenteVideo");
-    
-    fuente.src = ruta;
-    video.load();
-    
-    const modal = new bootstrap.Modal(document.getElementById("modalVideo"));
-    modal.show();
-  }
-</script>
+    <!-- Script para reproducir el video en el modal -->
+    <script>
+      function mostrarVideo(ruta) {
+        const video = document.getElementById("videoPromocional");
+        const fuente = document.getElementById("fuenteVideo");
+
+        fuente.src = ruta;
+        video.load();
+
+        const modal = new bootstrap.Modal(document.getElementById("modalVideo"));
+        modal.show();
+      }
+    </script>
 
     <div class="contenedor-promocion">
       <section class="promocion">
-      <h2>🌅 Lago de Coatepeque – Paquete “Atardecer en el Lago”</h2>
-      <p><strong>$149 por pareja</strong></p>
-      <ul>
-        <li>Paseo en lancha al atardecer</li>
-        <li>Cena romántica</li>
-        <li>Cabaña con jacuzzi</li>
-        <li>Desayuno incluido</li>
-      </ul>
-     <a href="#" class="btn btn-primary reservar-btn" data-paquete="atardecer" data-adultos="2" data-ninos="0">Reservar ahora</a>
+        <h2>🌅 Lago de Coatepeque – Paquete “Atardecer en el Lago”</h2>
+        <p><strong>$149 por pareja</strong></p>
+        <ul>
+          <li>Paseo en lancha al atardecer</li>
+          <li>Cena romántica</li>
+          <li>Cabaña con jacuzzi</li>
+          <li>Desayuno incluido</li>
+        </ul>
+        <a href="#" class="btn btn-primary reservar-btn" data-paquete="atardecer" data-adultos="2"
+          data-ninos="0">Reservar ahora</a>
         <a class="btn btn-success" onclick="mostrarVideo('../videos/videoLago.mp4')">Más información</a>
 
-      </section> 
-          <img src="../images/promoLago.jpg" alt="Playa El Tunco" class="imagen-promocion">
+      </section>
+      <img src="../images/promoLago.jpg" alt="Playa El Tunco" class="imagen-promocion">
     </div>
 
     <div class="contenedor-promocion">
-          <img src="../images/promoCerro.jpg" alt="Playa El Tunco" class="imagen-promocion">
+      <img src="../images/promoCerro.jpg" alt="Playa El Tunco" class="imagen-promocion">
 
-  <section class="promocion">
-      <h2>🌿 Cerro Verde – Paquete “Exploradores del Bosque”</h2>
-      <p><strong>$89 por persona</strong></p>
-      <ul>
-        <li>Senderismo con guía</li>
-        <li>Picnic en la cima</li>
-        <li>Zipline y actividades infantiles</li>
-      </ul>
-     <a href="#" class="btn btn-primary reservar-btn" data-paquete="bosque" data-adultos="1" data-ninos="0">Reservar ahora</a>
-    <a class="btn btn-success" onclick="mostrarVideo('../videos/videoCerro.mp4')">Más información</a>
+      <section class="promocion">
+        <h2>🌿 Cerro Verde – Paquete “Exploradores del Bosque”</h2>
+        <p><strong>$89 por persona</strong></p>
+        <ul>
+          <li>Senderismo con guía</li>
+          <li>Picnic en la cima</li>
+          <li>Zipline y actividades infantiles</li>
+        </ul>
+        <a href="#" class="btn btn-primary reservar-btn" data-paquete="bosque" data-adultos="1" data-ninos="0">Reservar
+          ahora</a>
+        <a class="btn btn-success" onclick="mostrarVideo('../videos/videoCerro.mp4')">Más información</a>
 
-  </section> </div>
+      </section>
+    </div>
 
-  <div class="contenedor-promocion">
-  <section class="promocion">
-    <h2>🌆 San Salvador – Paquete “Escapada Urbana”</h2>
-    <p><strong>$129 por pareja</strong></p>
-    <ul>
-      <li>1 noche en hotel boutique en Zona Rosa</li>
-      <li>Cena gourmet en restaurante de lujo</li>
-      <li>Tour nocturno por puntos icónicos de la ciudad</li>
-      <li>Desayuno tipo buffet incluido</li>
-    </ul>
-   <a href="#" class="btn btn-primary reservar-btn" data-paquete="urbano" data-adultos="2" data-ninos="0">Reservar ahora</a>
-    <a class="btn btn-success" onclick="mostrarVideo('../videos/videoUrbano.mp4')">Más información</a>
+    <div class="contenedor-promocion">
+      <section class="promocion">
+        <h2>🌆 San Salvador – Paquete “Escapada Urbana”</h2>
+        <p><strong>$129 por pareja</strong></p>
+        <ul>
+          <li>1 noche en hotel boutique en Zona Rosa</li>
+          <li>Cena gourmet en restaurante de lujo</li>
+          <li>Tour nocturno por puntos icónicos de la ciudad</li>
+          <li>Desayuno tipo buffet incluido</li>
+        </ul>
+        <a href="#" class="btn btn-primary reservar-btn" data-paquete="urbano" data-adultos="2" data-ninos="0">Reservar
+          ahora</a>
+        <a class="btn btn-success" onclick="mostrarVideo('../videos/videoUrbano.mp4')">Más información</a>
 
-  </section> 
-    <img src="../images/promoUrbano.jpg" alt="Playa El Tunco" class="imagen-promocion">
-</div>
+      </section>
+      <img src="../images/promoUrbano.jpg" alt="Playa El Tunco" class="imagen-promocion">
+    </div>
 
-  </main>  
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
-      <div class="container">
-        <div class="row text-center text-md-start align-items-center">
-          <!-- Logo -->
-          <div class="col-md-3 mb-4">
-            <a href="../index.htm">
-              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
-            </a>
-          </div>
-    
-          <!-- Sobre Nosotros -->
-          <div class="col-md-4 mb-4">
-            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
-            <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la reserva de excursiones
-        turísticas hacia los destinos más fascinantes de nuestro país. </p>
-            <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.</p>
-          </div>
-    
-          <!-- Redes Sociales -->
-          <div class="col-md-5 mb-4">
-            <h5 class="fw-bold text-uppercase">Síguenos</h5>
-            <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-youtube"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxs-envelope"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-whatsapp"></i></a>
-            </div>
-            <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
-              <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
-              <div class="text-start">
-                <div class="text-white small">Mayor información</div>
-                <div class="fw-bold text-white">+503 2258-5505</div>
-              </div>
-            </div>
-          </div>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center">
+        <!-- Logo -->
+        <div class="col-md-3 mb-4">
+          <a href="../index.htm">
+            <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
+          </a>
         </div>
-    
-        <hr class="border-secondary" />
-        <!-- Derechos -->
-        <div class="text-center small text-muted">
-          &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos
-          Reservados.
+
+        <!-- Sobre Nosotros -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+          <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la
+            reserva de excursiones
+            turísticas hacia los destinos más fascinantes de nuestro país. </p>
+          <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales,
+            lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El
+            Salvador.</p>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="col-md-5 mb-4">
+          <h5 class="fw-bold text-uppercase">Síguenos</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-youtube"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxs-envelope"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-whatsapp"></i></a>
+          </div>
+          <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+            <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+            <div class="text-start">
+              <div class="text-white small">Mayor información</div>
+              <div class="fw-bold text-white">+503 2258-5505</div>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+
+      <hr class="border-secondary" />
+      <!-- Derechos -->
+      <div class="text-center small text-muted">
+        &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos
+        Reservados.
+      </div>
+    </div>
+  </footer>
   <!-- Modal de Reserva Dinámica -->
-<div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="reservaModalLabel">Reserva</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body" id="reservaModalBody">
-        <!-- Contenido dinámico se insertará aquí -->
-      </div>
-      <div class="modal-footer">
-        <a href="reservas.html" class="btn btn-primary">Ir al formulario de reserva</a>
+  <div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reservaModalLabel">Reserva</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="reservaModalBody">
+          <!-- Contenido dinámico se insertará aquí -->
+        </div>
+        <div class="modal-footer">
+          <a href="reservas.html" class="btn btn-primary">Ir al formulario de reserva</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-     <script src="../js/script.js"></script>
-    <script src="../js/navbarUsuario.js"></script>
-    <script src="../js/usuario.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/navbarUsuario.js"></script>
+  <script src="../js/usuario.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  </body>
+</body>
 
 </html>

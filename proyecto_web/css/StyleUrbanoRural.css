@@ -58,24 +58,25 @@ body {
   object-fit: cover;
 }
 
-
 /* Banner */
 .banner-urbano {
-      background-image: url("../images/bannerTurismo.jpg");
-      background-size: cover;
-      background-position: center;
-      height: 60vh;
-      position: relative;
-      width: 100%;
-    }
+  background-image: url("../images/turismoUrbano.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
+    
 .banner-rural {
-      background-image: url("../images/bannerRural.jpg");
-      background-size: cover;
-      background-position: center;
-      height: 60vh;
-      position: relative;
-      width: 100%;
-    }
+  background-image: url("../images/bannerRural.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
+
 .banner-overlay {
   position: absolute;
   top: 0;
@@ -147,7 +148,6 @@ body {
   padding-left: 1.2rem;
   padding-right: 1.2rem;
 }
-
 
 .select-menu {
   background-color: var(--primary-color);
@@ -222,13 +222,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
 }
 
 .destination-item:hover .destination-overlay {
   bottom: 0;
 }
-s
+
 .destination-item {
   position: relative;
   overflow: hidden;
@@ -252,7 +251,6 @@ s
   color: var(--primary-color);
 }
 
-
 /* Sobreposición del bloque de texto en quienes soms */
 .about-text {
   background-color: #fff;
@@ -266,14 +264,6 @@ s
   z-index: 10;
   max-width: 550px;
   width: 100%;
-}
-
-@media (max-width: 992px) {
-  .about-text {
-    position: static;
-    transform: none;
-    margin-top: 1rem;
-  }
 }
 
 /* Asegura que el contenedor que aloja la imagen tenga posicionamiento relativo */
@@ -351,12 +341,6 @@ s
   transform: scale(1.05);
 }
 
-.index {
-    background-color: rgb(47, 105, 239);
-    color: #fff;
-    font-weight: bold;
-    box-shadow: inset 0 0 0 2px var(--light-gray);
-}
 /* BLOG SECTION STYLES */
 .blog-item {
   transition: transform 0.3s;
@@ -399,4 +383,12 @@ s
 .blog-item .p-4 {
   background-color: white;
   border-radius: 0 0 10px 10px;
+}
+
+@media (max-width: 992px) {
+  .about-text {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
 }
