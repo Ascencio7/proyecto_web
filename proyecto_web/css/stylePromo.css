@@ -7,25 +7,19 @@
   width: 100%;
 }
 
- body {
-   background-color: var(--background-color);
-   font-family: 'Poppins', sans-serif;
-   margin: 0;
-   height: 100%;
- }
-
- h1 {
-  font-size: 32px;
-  margin-top: 40px;        /* Margen superior */
-  margin-bottom: 20px;     /* Margen inferior */
-  font-weight: bold;
-  text-align: center;      /* Centrar el texto horizontalmente */
+body {
+  background-color: var(--background-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100%;
 }
 
-main {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
+h1 {
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 main {
@@ -36,7 +30,7 @@ main {
 
 .contenedor-promocion {
   display: flex;
-  align-items: center; /* Centra verticalmente la imagen respecto al section */
+  align-items: center;
   gap: 20px;
   margin: 20px;
 }
@@ -52,10 +46,18 @@ main {
 }
 
 .imagen-promocion {
-  width: 260px;         
-  height: 260px;       
-  object-fit: cover;    
-  border-radius: 15px;  
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+
+  /* Animación suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-promocion:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .promocion h2 {
@@ -82,11 +84,47 @@ main {
   transition: background-color 0.3s;
 }
 
-/* Ajustar los botones */
+.promocion a:hover {
+  background-color: #048b82;
+}
+
 .navbar-custom .nav-link.buttonfix-link {
-  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  white-space: nowrap;
   min-width: 130px;
   text-align: center;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
+}
+
+/* Responsive: mejora visual en móviles */
+@media (max-width: 767.98px) {
+  .contenedor-promocion {
+    flex-direction: column;
+    margin: 15px 10px;
+  }
+
+  .imagen-promocion {
+    order: 1;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    margin-bottom: 15px;
+  }
+
+  .promocion {
+    order: 2;
+    border-left: none;
+    border-top: 5px solid #28a745;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  main {
+    padding: 1rem;
+  }
 }

@@ -1,4 +1,4 @@
- body {
+body { 
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: 'Poppins', sans-serif;
@@ -46,6 +46,7 @@
   gap: 20px;
   justify-content: center;
 }
+
 .bloque {
   flex: 1 1 250px;
   background-color: #ffffff;
@@ -67,7 +68,6 @@
   font-size: 15px;
   color: #555;
   line-height: 1.5;
-
 }
 
 .bloque:hover h3,
@@ -77,7 +77,7 @@
 }
 
 .bloque ul {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .bloque ul li {
@@ -143,7 +143,7 @@
   width: 200px;
   height: 225px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .card:hover {
@@ -184,5 +184,29 @@
 }
 
 .redes a:hover {
-  color: #0077cc;
+  color: #0077cc;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .equipo {
+    display: block; /* cambia a bloque para apilar */
+    padding: 0 10px; /* margen interno para que no pegue al borde */
+  }
+  
+  .equipo .card {
+    width: 100% !important; /* que ocupe todo el ancho disponible */
+    max-width: 350px; /* límite para no hacerse gigante */
+    margin: 15px auto !important; /* centrado y separación vertical */
+    height: auto; /* altura automática para que el contenido no se corte */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 0 !important; /* reset márgenes negativos */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .equipo .card img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
 }

@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Iconos Boxicons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  
   <!-- Estilos CSS -->
   <link href="css/style.css" rel="stylesheet" />
 </head>
@@ -76,10 +77,10 @@
           <li class="nav-item text-center text-lg-start">
             <a class="nav-link px-3 buttonfix-link" href="./plantillas/quienesSomos.html">¿Quiénes Somos?</a>
           </li>
-            <li class="nav-item text-center text-lg-start">
+          <li class="nav-item text-center text-lg-start">
             <a class="nav-link px-3" href="./plantillas/promociones.html">Promociones</a>
           </li>
-             <li class="nav-item text-center text-lg-start">
+          <li class="nav-item text-center text-lg-start">
             <a class="nav-link px-3 buttonfix-link" href="./plantillas/login.html">Iniciar Sesion</a>
           </li>
 
@@ -165,102 +166,151 @@
       </div>
     </section>
 
-    <section class="mb-5">
-      <h2 class="text-center mb-4 fw-bold">Tipos de Turismo</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm card-product">
-            <div class="position-relative">
-              <img src="./images/centroHistorico.jpeg" class="card-img-top w-100" alt="Centro Historico">
-              <div class="position-absolute bottom-0 end-0 m-2">
-                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Turismo Urbano</h5>
-              <a href="./plantillas/urbano.html" style="text-decoration: none;">
-                <p class="card-text text-success">Ver mas</p>
-              </a>
-            </div>
+   <section class="mb-5">
+  <h2 class="text-center mb-4 fw-bold">Tipos de Turismo</h2>
+
+<!-- Script para manejar el cambio de icono al hacer clic en el botón de "Me gusta" -->
+<script> 
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.like-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const icon = button.querySelector('i');
+
+      // Alternar clases de icono
+      if (icon.classList.contains('bxs-heart')) {
+        icon.classList.remove('bxs-heart', 'text-danger');
+        icon.classList.add('bx-heart');
+      } else {
+        icon.classList.remove('bx-heart');
+        icon.classList.add('bxs-heart', 'text-danger');
+      }
+
+      // Agregar clase de animación
+      icon.classList.add('like-animate');
+
+      // Remover clase para permitir que la animación se repita
+      icon.addEventListener('animationend', () => {
+        icon.classList.remove('like-animate');
+      }, { once: true });
+    });
+  });
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.toggle-card-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.card');
+      card.classList.toggle('active');
+    });
+  });
+});
+
+  </script>
+
+  <!-- Primer grupo de 3 tarjetas -->
+  <div class="row g-4">
+    <!-- Turismo Urbano -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 shadow-sm card-product">
+        <div class="position-relative">
+          <img src="./images/centroHistorico.jpeg" class="card-img-top w-100" alt="Centro Historico">
+          <div class="position-absolute bottom-0 end-0 m-2">
+          <button class="btn btn-sm btn-light rounded-circle me-1 toggle-card-btn"><i class="bx bx-show"></i></button>
+          <button class="btn btn-sm btn-light rounded-circle like-btn"><i class="bx bx-heart"></i></button>
           </div>
         </div>
+        <div class="card-body">
+          <h5 class="card-title">Turismo Urbano</h5>
+          <a href="./plantillas/urbano.html" style="text-decoration: none;">
+            <p class="card-text text-success">Ver más</p>
+          </a>
+        </div>
+      </div>
+    </div>
 
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm card-product">
-            <div class="position-relative">
-              <img src="./images/suchitoto.jpg" class="card-img-top w-100" alt="Suchitoto">
-              <div class="position-absolute bottom-0 end-0 m-2">
-                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Turismo Rural</h5>
-              <a href="./plantillas/rural.html" style="text-decoration: none;">
-                <p class="card-text text-success">Ver mas</p>
-              </a>
-            </div>
+    <!-- Turismo Rural -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 shadow-sm card-product">
+        <div class="position-relative">
+          <img src="./images/suchitoto.jpg" class="card-img-top w-100" alt="Suchitoto">
+          <div class="position-absolute bottom-0 end-0 m-2">
+           <button class="btn btn-sm btn-light rounded-circle me-1 toggle-card-btn"><i class="bx bx-show"></i></button>
+             <button class="btn btn-sm btn-light rounded-circle like-btn"><i class="bx bx-heart"></i></button>
           </div>
         </div>
+        <div class="card-body">
+          <h5 class="card-title">Turismo Rural</h5>
+          <a href="./plantillas/rural.html" style="text-decoration: none;">
+            <p class="card-text text-success">Ver más</p>
+          </a>
+        </div>
+      </div>
+    </div>
 
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm card-product">
-            <div class="position-relative">
-              <img src="./images/lagoCoatepeque.jpg" class="card-img-top w-100" alt="Lago Coatepeque">
-              <div class="position-absolute bottom-0 end-0 m-2">
-                <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Turismo en Lagos</h5>
-              <a href="./plantillas/lagos.html" style="text-decoration: none;">
-                <p class="card-text text-success">Ver mas</p>
-              </a>
-            </div>
+    <!-- Turismo en Lagos -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 shadow-sm card-product">
+        <div class="position-relative">
+          <img src="./images/lagoCoatepeque.jpg" class="card-img-top w-100" alt="Lago Coatepeque">
+          <div class="position-absolute bottom-0 end-0 m-2">
+            <button class="btn btn-sm btn-light rounded-circle me-1 toggle-card-btn"><i class="bx bx-show"></i></button>
+             <button class="btn btn-sm btn-light rounded-circle like-btn"><i class="bx bx-heart"></i></button>
           </div>
         </div>
+        <div class="card-body">
+          <h5 class="card-title">Turismo en Lagos</h5>
+          <a href="./plantillas/lagos.html" style="text-decoration: none;">
+            <p class="card-text text-success">Ver más</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Última fila centrada -->
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm card-product">
-              <div class="position-relative">
-                <img src="./images/playaTunco.jpg" class="card-img-top w-100" alt="Playa el Tunco">
-                <div class="position-absolute bottom-0 end-0 m-2">
-                  <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                  <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Turismo en Playas</h5>
-                <a href="./plantillas/playas.html" style="text-decoration: none;">
-                  <p class="card-text text-success">Ver mas</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm card-product">
-              <div class="position-relative">
-                <img src="./images/cerroVerde.jpeg" class="card-img-top w-100" alt="Cerro Verde">
-                <div class="position-absolute bottom-0 end-0 m-2">
-                  <button class="btn btn-sm btn-light rounded-circle me-1"><i class="bx bx-show"></i></button>
-                  <button class="btn btn-sm btn-light rounded-circle"><i class="bx bx-heart"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Turismo en Montañas</h5>
-                <a href="./plantillas/montanas.html" style="text-decoration: none;">
-                  <p class="card-text text-success">Ver mas</p>
-                </a>
-              </div>
-            </div>
+  <!-- Segundo grupo de 2 tarjetas centradas usando mx-auto -->
+  <div class="row g-4 mt-2 justify-content-center">
+  <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+      <div class="card h-100 shadow-sm card-product">
+        <div class="position-relative">
+          <img src="./images/playaTunco.jpg" class="card-img-top w-100" alt="Playa el Tunco">
+          <div class="position-absolute bottom-0 end-0 m-2">
+            <button class="btn btn-sm btn-light rounded-circle me-1 toggle-card-btn"><i class="bx bx-show"></i></button>
+             <button class="btn btn-sm btn-light rounded-circle like-btn"><i class="bx bx-heart"></i></button>
           </div>
         </div>
-    </section>
+        <div class="card-body">
+          <h5 class="card-title">Turismo en Playas</h5>
+          <a href="./plantillas/playas.html" style="text-decoration: none;">
+            <p class="card-text text-success">Ver más</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Turismo en Montañas -->
+      <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+      <div class="card h-100 shadow-sm card-product">
+        <div class="position-relative">
+          <img src="./images/cerroVerde.jpeg" class="card-img-top w-100" alt="Cerro Verde">
+          <div class="position-absolute bottom-0 end-0 m-2">
+            <button class="btn btn-sm btn-light rounded-circle me-1 toggle-card-btn"><i class="bx bx-show"></i></button>
+           <button class="btn btn-sm btn-light rounded-circle like-btn"><i class="bx bx-heart"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Turismo en Montañas</h5>
+          <a href="./plantillas/montanas.html" style="text-decoration: none;">
+            <p class="card-text text-success">Ver más</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
     <!-- Carrusel -->

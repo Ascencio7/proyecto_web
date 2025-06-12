@@ -84,7 +84,20 @@ body {
   position: relative;
   z-index: 2;
 }
-/* Banner */
+
+.card.active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.7;
+  transform: scale(1.03);
+}
+
+.card.active .btn {
+  position: relative;
+  background-color: #fff; /* o el color que uses para el botón */
+  opacity: 1;             /* forzar opacidad plena */
+  z-index: 10;
+}
+
 
 /* Tipos de Turismo */
 .card-category {
@@ -150,9 +163,9 @@ text-align: center;
   background-color: var(--primary-color);
   color: white;
   border: none;
-<<<<<<< HEAD
   border-radius: 5px;
   padding: 0.4rem 1rem;
+  width: auto;
   margin-top: 2%;
   margin-left: 1rem;   /* Aproximadamente igual a mx-3 */
   margin-right: 1rem;
@@ -160,20 +173,13 @@ text-align: center;
   margin-bottom: 0.25rem;
 }
 
-
-=======
-  border-radius: 20px;
-  padding: 10px 20px;
-}
-
->>>>>>> 1a61ab5ebca802ed738f5642d3db46c4282a1668
 .select-menu:focus{
   outline: none;
 }
 
 .select-menu:hover {
   background-color: rgb(47, 105, 239);
-  
+    cursor: pointer;
 }
 
 .card-feature {
@@ -369,6 +375,56 @@ main{
 
   .caption-left p {
     font-size: 0.9rem;
+  }
+}
+/* Animación de "Me gusta" */
+@keyframes like-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-animate {
+  animation: like-pop 0.3s ease;
+}
+
+/* Ajuste tamaño para botones toggle-card-btn y like-btn */
+.toggle-card-btn,
+.like-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* para mantener el círculo */
+}
+
+.toggle-card-btn i,
+.like-btn i {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Ajuste responsivo para móvil */
+@media (max-width: 768px) {
+  .toggle-card-btn,
+  .like-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .toggle-card-btn i,
+  .like-btn i {
+    font-size: 18px;
   }
 }
 
