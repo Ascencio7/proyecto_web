@@ -335,15 +335,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Función para formatear fechas
-  function formatearFecha(fechaStr) {
-    if (!fechaStr) return '';
-    const fecha = new Date(fechaStr);
-    return fecha.toLocaleDateString('es-ES', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    });
-  }
+function formatearFecha(fechaStr) {
+  if (!fechaStr) return '';
+  const fecha = new Date(fechaStr + 'T00:00:00'); // Asegurarse de que la fecha tenga hora para evitar problemas de zona horaria
+  return fecha.toLocaleDateString('es-ES', { // Formatear fecha en formato dd/mm/yyyy
+    timeZone: 'UTC', // Usar zona horaria UTC para evitar problemas de conversión
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+}
 
   // Event listeners para los botones de reserva rápida
   document.querySelectorAll('.btn-outline-primary').forEach(btn => {
