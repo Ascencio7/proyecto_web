@@ -51,3 +51,10 @@ h2{
 .form-control{
   resize: none;
 }
+
+.select-menu {
+  max-width: 100%;
+  width: auto;
+  white-space: nowrap;
+  overflow-x: auto;
+}

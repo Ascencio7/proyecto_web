@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +23,6 @@
 </style>
 
 <body>
-
   <!-- Header -->
   <header>
     <div class="container-fluid bg-light py-2 border-bottom">
@@ -32,8 +30,8 @@
         <div class="row align-items-center text-center text-md-start">
           <!-- Logo -->
           <div class="col-12 col-md-4 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
-            <a href="./index.htm">
-              <img src="/logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-height: 60px;">
+            <a href="../index.html">
+              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-height: 60px;">
             </a>
           </div>
 
@@ -41,7 +39,7 @@
           <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
             <i class="bx bx-globe fs-2 text-primary me-2"></i>
             <h1 class="m-0 fs-4 fw-bold">
-              <a href="./index.htm" class="text-decoration-none">Turismo SV</a>
+              <a href="../index.html" class="text-decoration-none">Turismo SV</a>
             </h1>
           </div>
           <div class="col-12 col-md-4 d-none d-md-block">
@@ -61,7 +59,7 @@
       <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item text-center text-lg-start">
-            <a class="nav-link px-3" href="../index.htm">Inicio</a>
+            <a class="nav-link px-3" href="../index.html">Inicio</a>
           </li>
           <li class="nav-item dropdown">
             <select class="select-menu nav-link" onchange="location = this.value;">
@@ -105,16 +103,15 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
-              <li><a class="dropdown-item" href="../index.htm" onclick="cerrarSesion()">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="../index.html" onclick="cerrarSesion()">Cerrar sesión</a></li>
             </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
-
-
+  
+  
   <!-- Banner -->
   <section class="banner d-flex align-items-center">
     <div class="banner-overlay"></div>
@@ -125,6 +122,7 @@
       </h2>
     </div>
   </section>
+  
   <!-- Sección de Contacto -->
   <section class="py-5 bg-light">
     <div class="container">
@@ -137,12 +135,10 @@
           <div class="card shadow-sm border-0 h-100 p-4">
             <h5 class="fw-bold mb-4">Información de la Empresa</h5>
             <p>
-              <i class="bx bx-map me-2 text-primary"></i> San Salvador, El
-              Salvador
+              <i class="bx bx-map me-2 text-primary"></i> San Salvador, El Salvador
             </p>
             <p>
-              <i class="bx bx-envelope me-2 text-primary"></i>
-              contacto@turismosv.com
+              <i class="bx bx-envelope me-2 text-primary"></i> contacto@turismosv.com
             </p>
             <p>
               <i class="bx bx-phone me-2 text-primary"></i> +503 2258-5505
@@ -151,19 +147,18 @@
               <i class="bx bxl-whatsapp me-2 text-success"></i> +503 7123-4567
             </p>
             <p>
-              <i class="bx bx-time me-2 text-primary"></i> Lunes a Viernes:
-              8:00 AM - 5:00 PM
+              <i class="bx bx-time me-2 text-primary"></i> Lunes a Viernes: 8:00 AM - 5:00 PM
             </p>
           </div>
         </div>
-
+  
         <!-- Formulario de Contacto -->
         <div class="col-md-6">
           <div class="card shadow-sm border-0 h-100 p-4">
             <form>
               <div class="mb-3">
                 <label for="nombre" class="form-label fw-semibold">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required />
+                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required autofocus />
               </div>
               <div class="mb-3">
                 <label for="correo" class="form-label fw-semibold">Correo Electrónico</label>
@@ -196,7 +191,7 @@
       <div class="row text-center text-md-start align-items-center">
         <!-- Logo -->
         <div class="col-md-3 mb-4">
-          <a href="../index.htm">
+          <a href="../index.html">
             <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
           </a>
         </div>
@@ -242,12 +237,11 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/script.js"></script>
   <script src="../js/navbarUsuario.js"></script>
   <script src="../js/usuario.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/contacto.js"></script>
 
 </body>
-
 </html>

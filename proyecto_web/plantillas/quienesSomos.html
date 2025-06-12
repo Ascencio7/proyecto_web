@@ -13,296 +13,299 @@
     <link href="../css/styleQuienes.css" rel="stylesheet" />
 </head>
 <body>
-<!-- Header -->
-<header>
-  <div class="container-fluid bg-light py-2 border-bottom">
-    <div class="container">
-      <div class="row align-items-center text-center text-md-start">
-        <!-- Logo -->
-        <div class="col-12 col-md-4 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
-          <a href="./index.htm">
-            <img src="/logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-height: 60px;">
-          </a>
-        </div>
-
-        <!-- Título -->
-        <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-          <i class="bx bx-globe fs-2 text-primary me-2"></i>
-          <h1 class="m-0 fs-4 fw-bold">
-           <a href="./index.htm" class="text-decoration-none">Turismo SV</a>
-          </h1>
-        </div>
-        <div class="col-12 col-md-4 d-none d-md-block">
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-    
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item text-center text-lg-start">
-                <a class="nav-link px-3" href="../index.htm">Inicio</a>
-              </li>
-              <li class="nav-item dropdown">
-                  <select class="select-menu nav-link" onchange="location = this.value;">
-                    <option value="" class="turismo">TURISMO</option>
-                  <option value="../plantillas/urbano.html"></a>Urbano</option>
-                  <option value="../plantillas/rural.html">Rural</option>
-                  <option value="../plantillas/playas.html">Playas</option>
-                  <option value="../plantillas/lagos.html">Lagos</option>
-                  <option value="../plantillas/montanas.html">Montañas</option>
-                </select>
-              </li>
-              <li class="nav-item text-center text-lg-start">
-                <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
-              </li>
-              <li class="nav-item text-center text-lg-start">
-                <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
-              </li>
-              <li class="nav-item text-center text-lg-start">
-                <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link index px-3 buttonfix-link" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
-              </li>
-              <li class="nav-item text-center text-lg-start">
-                <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-3 buttonfix-link" href="../plantillas/login.html">Iniciar Sesion</a>
-              </li>
-    
-              <li class="nav-item dropdown">
-                <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
-                    class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
-                  <li>
-                    <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
-                  <li><a class="dropdown-item" href="../index.htm" onclick="cerrarSesion()">Cerrar sesión</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-
-    <!-- Banner -->
-    <section class="banner d-flex align-items-center">
-      <div class="banner-overlay"></div>
-      <div class="container text-white text-center banner-content">
-        <p class="fs-4 mb-1">Explora El Salvador</p>
-        <h2 class="display-4 fw-bold mb-4">
-          Conociendo nuestro<br />propósito
-        </h2>
-      </div>
-    </section>
-
-    <!-- Quienes Somos -->
-    <div class="seccion-empresa">
-      <h2 class="titulo-empresa">¿Quiénes Somos?</h2>
-      <p class="descripcion-empresa">
-        Somos una empresa salvadoreña especializada en la reserva de excursiones
-        turísticas hacia los destinos más fascinantes de nuestro país. Ofrecemos
-        experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas,
-        conectando a los viajeros con la riqueza natural, cultural y humana de
-        El Salvador.
-        <br />
-        <br />
-        Nos apasiona mostrar la diversidad de nuestro territorio: desde el
-        encanto de los pueblos rurales y tradiciones ancestrales, hasta la
-        energía vibrante de las ciudades, la serenidad de nuestros lagos, la
-        belleza de las playas y la majestuosidad de nuestras montañas. Ya sea
-        que busques aventura, descanso, cultura o contacto con la naturaleza,
-        diseñamos cada excursión para que vivas una experiencia segura,
-        auténtica e inolvidable.
-      </p>
-
-      <div class="bloques-empresa">
-        <div class="bloque">
-          <h3>Misión</h3>
-          <p>
-            Facilitar el acceso a experiencias turísticas auténticas en El
-            Salvador, promoviendo el turismo sostenible, la economía local y el
-            amor por nuestras riquezas naturales y culturales.
-          </p>
-        </div>
-
-        <div class="bloque">
-          <h3>Visión</h3>
-          <p>
-            Ser la plataforma líder de reservas de excursiones en El Salvador,
-            reconocida por su compromiso con la calidad, la seguridad y la
-            conexión entre personas y naturaleza.
-          </p>
-        </div>
-
-        <div class="bloque">
-          <h3>Valores</h3>
-          <ul>
-            <li>Pasión por El Salvador</li>
-            <li>Excelencia en el servicio</li>
-            <li>Transparencia y honestidad</li>
-            <li>Diversión con responsabilidad</li>
-            <li>Trabajo en equipo</li>
-          </ul>
-        </div>
-      </div>
-      <br /><br />
-      <h2 class="titulo-empresa">Nuestra Historia</h2>
-      <p class="descripcion-empresa">
-        Nacimos con un sueño: hacer que más personas, tanto salvadoreños como
-        extranjeros, conozcan y disfruten las maravillas que esconde cada rincón
-        de El Salvador. Detectamos la necesidad de una forma confiable y
-        organizada de reservar excursiones, y decidimos crear una plataforma que
-        conecte fácilmente a los aventureros con experiencias inolvidables.
-      </p>
-
-      <h2 class="titulo-empresa">Nuestro Equipo</h2>
-
-      <section class="equipo">
-        <div class="card a">
-          <img src="../images/persona1.png" alt="Foto de Carlos" />
-          <h3>Carlos Alfaro</h3>
-          <p class="puesto">Desarrollador de Software</p>
-          <div class="redes">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="card b">
-          <img src="../images/persona3.png" alt="Foto de Yanci" />
-          <h3>Yanci Gonzales</h3>
-          <p class="puesto">Desarrollador de Software</p>
-          <div class="redes">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="card c">
-          <img src="../images/persona2.png" alt="Foto de Ruth" />
-          <h3>Ruth Vaquerano</h3>
-          <p class="puesto">Desarrollador de Software</p>
-          <div class="redes">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="card d">
-          <img src="../images/persona4.png" alt="Foto de Vladi" />
-          <h3>Vladimir Ramos</h3>
-          <p class="puesto">Desarrollador de Software</p>
-          <div class="redes">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="card e">
-          <img src="../images/persona5.png" alt="Foto de Emir" />
-          <h3>Emir Alvarado</h3>
-          <p class="puesto">Desarrollador de Software</p>
-          <div class="redes">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="card f">
-          <img src="../images/persona6.png" alt="Foto de Danilo" />
-          <h3>Danilo Lopez</h3>
-          <p class="puesto">Desarrollador de Software</p>
-          <div class="redes">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+  
+  <!-- Header -->
+  <header>
+    <div class="container-fluid bg-light py-2 border-bottom">
       <div class="container">
-        <div class="row text-center text-md-start align-items-center">
+        <div class="row align-items-center text-center text-md-start">
           <!-- Logo -->
-          <div class="col-md-3 mb-4">
-            <a href="../index.htm">
-              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
+          <div class="col-12 col-md-4 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
+            <a href="../index.html">
+              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-height: 60px;">
             </a>
           </div>
-    
-          <!-- Sobre Nosotros -->
-          <div class="col-md-4 mb-4">
-            <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
-            <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la reserva de excursiones
-        turísticas hacia los destinos más fascinantes de nuestro país. </p>
-            <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.</p>
+  
+          <!-- Título -->
+          <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+            <i class="bx bx-globe fs-2 text-primary me-2"></i>
+            <h1 class="m-0 fs-4 fw-bold">
+              <a href="../index.html" class="text-decoration-none">Turismo SV</a>
+            </h1>
           </div>
-    
-          <!-- Redes Sociales -->
-          <div class="col-md-5 mb-4">
-            <h5 class="fw-bold text-uppercase">Síguenos</h5>
-            <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-youtube"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxs-envelope"></i></a>
-              <a href="#" class="text-white hover-icon"><i class="bx bxl-whatsapp"></i></a>
-            </div>
-            <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
-              <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
-              <div class="text-start">
-                <div class="text-white small">Mayor información</div>
-                <div class="fw-bold text-white">+503 2258-5505</div>
-              </div>
-            </div>
+          <div class="col-12 col-md-4 d-none d-md-block">
           </div>
-        </div>
-    
-        <hr class="border-secondary" />
-        <!-- Derechos -->
-        <div class="text-center small text-muted">
-          &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos
-          Reservados.
         </div>
       </div>
-    </footer>
+    </div>
+  </header>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item text-center text-lg-start">
+            <a class="nav-link px-3" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <select class="select-menu nav-link" onchange="location = this.value;">
+              <option value="" class="turismo">TURISMO</option>
+              <option value="../plantillas/urbano.html"></a>Urbano</option>
+              <option value="../plantillas/rural.html">Rural</option>
+              <option value="../plantillas/playas.html">Playas</option>
+              <option value="../plantillas/lagos.html">Lagos</option>
+              <option value="../plantillas/montanas.html">Montañas</option>
+            </select>
+          </li>
+          <li class="nav-item text-center text-lg-start">
+            <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
+          </li>
+          <li class="nav-item text-center text-lg-start">
+            <a class="nav-link px-3" href="../plantillas/reservas.html">Reservas</a>
+          </li>
+          <li class="nav-item text-center text-lg-start">
+            <a class="nav-link px-3" href="../plantillas/contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link index px-3 buttonfix-link" href="../plantillas/quienesSomos.html">¿Quiénes Somos?</a>
+          </li>
+          <li class="nav-item text-center text-lg-start">
+            <a class="nav-link px-3" href="../plantillas/promociones.html">Promociones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 buttonfix-link" href="../plantillas/login.html">Iniciar Sesion</a>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
+                class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
+              <li>
+                <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
+              <li><a class="dropdown-item" href="../index.html" onclick="cerrarSesion()">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Banner -->
+  <section class="banner d-flex align-items-center">
+    <div class="banner-overlay"></div>
+    <div class="container text-white text-center banner-content">
+      <p class="fs-4 mb-1">Explora El Salvador</p>
+      <h2 class="display-4 fw-bold mb-4">
+        Conociendo nuestro<br />propósito
+      </h2>
+    </div>
+  </section>
+  
+  <!-- Quienes Somos -->
+  <div class="seccion-empresa">
+    <h2 class="titulo-empresa">¿Quiénes Somos?</h2>
+    <p class="descripcion-empresa">
+      Somos una empresa salvadoreña especializada en la reserva de excursiones
+      turísticas hacia los destinos más fascinantes de nuestro país. Ofrecemos
+      experiencias únicas en zonas urbanas, rurales, lagos, playas y montañas,
+      conectando a los viajeros con la riqueza natural, cultural y humana de
+      El Salvador.
+      <br />
+      <br />
+      Nos apasiona mostrar la diversidad de nuestro territorio: desde el
+      encanto de los pueblos rurales y tradiciones ancestrales, hasta la
+      energía vibrante de las ciudades, la serenidad de nuestros lagos, la
+      belleza de las playas y la majestuosidad de nuestras montañas. Ya sea
+      que busques aventura, descanso, cultura o contacto con la naturaleza,
+      diseñamos cada excursión para que vivas una experiencia segura,
+      auténtica e inolvidable.
+    </p>
+  
+    <div class="bloques-empresa">
+      <div class="bloque">
+        <h3>Misión</h3>
+        <p>
+          Facilitar el acceso a experiencias turísticas auténticas en El
+          Salvador, promoviendo el turismo sostenible, la economía local y el
+          amor por nuestras riquezas naturales y culturales.
+        </p>
+      </div>
+  
+      <div class="bloque">
+        <h3>Visión</h3>
+        <p>
+          Ser la plataforma líder de reservas de excursiones en El Salvador,
+          reconocida por su compromiso con la calidad, la seguridad y la
+          conexión entre personas y naturaleza.
+        </p>
+      </div>
+  
+      <div class="bloque">
+        <h3>Valores</h3>
+        <ul>
+          <li>Pasión por El Salvador</li>
+          <li>Excelencia en el servicio</li>
+          <li>Transparencia y honestidad</li>
+          <li>Diversión con responsabilidad</li>
+          <li>Trabajo en equipo</li>
+        </ul>
+      </div>
+    </div>
+    <br /><br />
+    <h2 class="titulo-empresa">Nuestra Historia</h2>
+    <p class="descripcion-empresa">
+      Nacimos con un sueño: hacer que más personas, tanto salvadoreños como
+      extranjeros, conozcan y disfruten las maravillas que esconde cada rincón
+      de El Salvador. Detectamos la necesidad de una forma confiable y
+      organizada de reservar excursiones, y decidimos crear una plataforma que
+      conecte fácilmente a los aventureros con experiencias inolvidables.
+    </p>
+  
+    <h2 class="titulo-empresa">Nuestro Equipo</h2>
+  
+    <section class="equipo">
+      <div class="card a">
+        <img src="../images/persona1.png" alt="Foto de Carlos" />
+        <h3>Carlos Alfaro</h3>
+        <p class="puesto">Desarrollador de Software</p>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <div class="card b">
+        <img src="../images/persona3.png" alt="Foto de Yanci" />
+        <h3>Yanci Gonzales</h3>
+        <p class="puesto">Desarrollador de Software</p>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <div class="card c">
+        <img src="../images/persona2.png" alt="Foto de Ruth" />
+        <h3>Ruth Vaquerano</h3>
+        <p class="puesto">Desarrollador de Software</p>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <div class="card d">
+        <img src="../images/persona4.png" alt="Foto de Vladi" />
+        <h3>Vladimir Ramos</h3>
+        <p class="puesto">Desarrollador de Software</p>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <div class="card e">
+        <img src="../images/persona5.png" alt="Foto de Emir" />
+        <h3>Emir Alvarado</h3>
+        <p class="puesto">Desarrollador de Software</p>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <div class="card f">
+        <img src="../images/persona6.png" alt="Foto de Danilo" />
+        <h3>Danilo Lopez</h3>
+        <p class="puesto">Desarrollador de Software</p>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4 shadow-lg">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center">
+        <!-- Logo -->
+        <div class="col-md-3 mb-4">
+          <a href="../index.html">
+            <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-width: 150px" />
+          </a>
+        </div>
+  
+        <!-- Sobre Nosotros -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-uppercase">Sobre Nosotros</h5>
+          <p class="text-white-50 mb-1" style="text-align: justify;">Somos una empresa salvadoreña especializada en la
+            reserva de excursiones
+            turísticas hacia los destinos más fascinantes de nuestro país. </p>
+          <p class="text-white-50" style="text-align: justify;">Ofrecemos experiencias únicas en zonas urbanas, rurales,
+            lagos, playas y montañas, conectando a los viajeros con la riqueza natural, cultural y humana de El Salvador.
+          </p>
+        </div>
+  
+        <!-- Redes Sociales -->
+        <div class="col-md-5 mb-4">
+          <h5 class="fw-bold text-uppercase">Síguenos</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 fs-4">
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-youtube"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxs-envelope"></i></a>
+            <a href="#" class="text-white hover-icon"><i class="bx bxl-whatsapp"></i></a>
+          </div>
+          <div class="d-flex justify-content-center justify-content-md-start align-items-center mt-3">
+            <i class="bx bx-phone-call fs-4 text-success me-2 text-white"></i>
+            <div class="text-start">
+              <div class="text-white small">Mayor información</div>
+              <div class="fw-bold text-white">+503 2258-5505</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <hr class="border-secondary" />
+      <!-- Derechos -->
+      <div class="text-center small text-muted">
+        &copy; 2025 <strong>Turismo Salvadoreño</strong> - Todos los Derechos
+        Reservados.
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="../js/script.js"></script>
+  <!-- Agrega Font Awesome para los iconos sociales -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="../js/navbarUsuario.js"></script>
+  <script src="../js/usuario.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="../js/script.js"></script>
-    <!-- Agrega Font Awesome para los iconos sociales -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="../js/navbarUsuario.js"></script>
-    <script src="../js/usuario.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  </body>
+</body>
 </html>
