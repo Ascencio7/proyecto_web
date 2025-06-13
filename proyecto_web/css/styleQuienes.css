@@ -94,16 +94,17 @@ body {
 }
 
 .equipo {
-  display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: repeat(3, auto);
-  gap: 20px;
-  justify-content: center;
+  display: grid; /* Usa un grid para organizar las tarjetas en filas y columnas */
+  grid-template-columns: repeat(3, 200px); /* 3 columnas de 200px cada una */
+  grid-template-rows: repeat(3, auto); /* 3 filas con altura automática según contenido */
+  gap: 20px; /* Espacio de 20px entre filas y columnas */
+  justify-content: center; /* Centra el grid horizontalmente dentro del contenedor */
 }
 
+
 .card.a { 
-  grid-column: 1; 
-  grid-row: 1; 
+  grid-column: 1; /* Ubica la tarjeta en la primera columna de la cuadrícula */
+  grid-row: 1; /* Ubica la tarjeta en la primera fila de la cuadrícula */
 }
 
 .card.c { 
@@ -147,8 +148,8 @@ body {
 }
 
 .card:hover {
-  transform: translateY(10px);
-  background-color: #87addf;
+  transform: translateY(10px); /* Mueve la tarjeta 10px hacia abajo al pasar el cursor */
+  background-color: #87addf;   /* Cambia el fondo a un color azul claro al hacer hover */
 }
 
 .card:hover h3,

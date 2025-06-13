@@ -7,51 +7,63 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Enlace a tu hoja de estilos principal personalizada -->
   <link href="../css/style.css" rel="stylesheet" />
+    <!-- Enlace a una hoja de estilos adicional para la sección de promociones -->
   <link href="../css/stylePromo.css" rel="stylesheet" />
 </head>
 
 <body>
   
-  <!-- Header -->
-  <header>
-    <div class="container-fluid bg-light py-2 border-bottom">
-      <div class="container">
-        <div class="row align-items-center text-center text-md-start">
-          <!-- Logo -->
-          <div class="col-12 col-md-4 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
-            <a href="../index.html">
-              <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-height: 60px;">
-            </a>
-          </div>
-  
-          <!-- Título -->
-          <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-            <i class="bx bx-globe fs-2 text-primary me-2"></i>
-            <h1 class="m-0 fs-4 fw-bold">
-              <a href="../index.html" class="text-decoration-none">Turismo SV</a>
-            </h1>
-          </div>
-          <div class="col-12 col-md-4 d-none d-md-block">
-          </div>
+<!-- Header principal con fondo claro y borde inferior -->
+<header>
+  <div class="container-fluid bg-light py-2 border-bottom"> <!-- Contenedor ancho con padding vertical y borde -->
+    <div class="container"> <!-- Contenedor centrado fijo -->
+      <div class="row align-items-center text-center text-md-start"> <!-- Fila con alineación vertical y texto centrado en móvil, a la izquierda en escritorio -->
+
+        <!-- Logo, centrado en móvil y alineado a la izquierda en escritorio -->
+        <div class="col-12 col-md-4 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
+          <a href="../index.html">
+            <img src="../logo/logo.png" alt="Logo Turismo Salvadoreño" class="img-fluid" style="max-height: 60px;">
+          </a>
         </div>
+
+        <!-- Título con icono, centrado -->
+        <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+          <i class="bx bx-globe fs-2 text-primary me-2"></i>
+          <h1 class="m-0 fs-4 fw-bold">
+            <a href="../index.html" class="text-decoration-none">Turismo SV</a>
+          </h1>
+        </div>
+
+        <!-- Espacio vacío para mantener estructura en escritorio -->
+        <div class="col-12 col-md-4 d-none d-md-block"></div>
+
       </div>
     </div>
-  </header>
+  </div>
+</header>
+
   
   <!-- Navbar -->
+   <!-- Barra de navegación utilizando clases de Bootstrap -->
   <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
     <div class="container">
+        <!-- Botón visible en dispositivos móviles para colapsar/expandir el menú -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <!-- Icono de "hamburguesa" (tres líneas) que aparece dentro del botón -->
         <span class="navbar-toggler-icon"></span>
       </button>
-  
+        <!-- Contenedor colapsable del menú de navegación (se muestra u oculta en móviles) -->
       <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+        <!-- Lista de elementos de navegación -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Enlace a la página de inicio -->
           <li class="nav-item text-center text-lg-start">
             <a class="nav-link px-3" href="../index.html">Inicio</a>
           </li>
           <li class="nav-item dropdown">
+            <!-- Al cambiar la opción seleccionada, se redirige a la URL indicada -->
             <select class="select-menu nav-link" onchange="location = this.value;">
               <option value="" class="turismo">TURISMO</option>
               <option value="../plantillas/urbano.html"></a>Urbano</option>
@@ -61,6 +73,7 @@
               <option value="../plantillas/montanas.html">Montañas</option>
             </select>
           </li>
+          <!-- Enlace a la sección de reseñas -->
           <li class="nav-item text-center text-lg-start">
             <a class="nav-link px-3" href="../plantillas/resenas.html">Reseñas</a>
           </li>
@@ -76,15 +89,18 @@
           <li class="nav-item text-center text-lg-start">
             <a class="nav-link index px-3" href="../plantillas/promociones.html">Promociones</a>
           </li>
+          <!-- Enlace para iniciar sesión -->
           <li class="nav-item">
             <a class="nav-link px-3 buttonfix-link" href="../plantillas/login.html">Iniciar Sesion</a>
           </li>
+          <!-- Ícono de perfil con menú desplegable -->
           <li class="nav-item dropdown">
             <a href="#" id="userDropdownBtn" class="nav-link d-flex align-items-center" data-bs-toggle="dropdown"
               aria-expanded="false">
               <img id="navbarProfilePic" src="../pictureDefault/perfilLogoDefecto.jpg" alt="Perfil"
                 class="rounded-circle">
             </a>
+            <!-- Menú desplegable del usuario -->
             <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdownBtn">
               <li>
                 <h6 class="dropdown-header" id="userEmail">usuario@example.com</h6>
@@ -92,7 +108,9 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
+              <!-- Opción para acceder a la cuenta -->
               <li><a class="dropdown-item" href="../plantillas/usuario.html">Mi cuenta</a></li>
+              <!-- Opción para cerrar sesión, ejecuta función JavaScript -->
               <li><a class="dropdown-item" href="../index.html" onclick="cerrarSesion()">Cerrar sesión</a></li>
             </ul>
           </li>
@@ -100,24 +118,35 @@
       </div>
     </div>
   </nav>
-  
-  <!-- Banner -->
+
+
+  <!-- Sección del banner principal -->
   <section class="banner d-flex align-items-center">
+    <!-- Capa de superposición para oscurecer o estilizar el fondo del banner -->
     <div class="banner-overlay"></div>
+    <!-- Contenedor centrado con texto en blanco -->
     <div class="container text-white text-center banner-content">
+      <!-- Texto secundario del banner -->
       <p class="fs-4 mb-1">Explora El Salvador</p>
+      <!-- Título principal del banner -->
+
       <h2 class="display-4 fw-bold mb-4">
         Aprovechando nuestras<br />mejores ofertas
       </h2>
     </div>
   </section>
-
-  <!-- Promociones -->
+=
+ <!-- Promociones -->
+  <!-- Título principal de la sección de promociones -->
   <h1>Promociones Turísticas El Salvador</h1>
   <main>
+    <!-- Contenedor que agrupa la imagen y la información de la promoción -->
     <div class="contenedor-promocion">
+     <!-- Imagen representativa de la promoción (Playa El Tunco) -->
       <img src="../images/promoTunco.jpg" alt="Playa El Tunco" class="imagen-promocion">
+      <!-- Contenido textual de la promoción -->
       <div class="promocion">
+        <!-- Información del paquete turístico -->
         <h2>🌊 Playa El Tunco – Paquete “Sol y Arena”</h2>
         <p><strong>Desde $99 por persona</strong></p>
         <ul>
@@ -126,30 +155,46 @@
           <li>Clase de surf</li>
           <li>Show en vivo</li>
         </ul>
+        <!-- Botón para reservar el paquete, con datos personalizados -->
         <a href="#" class="btn btn-primary reservar-btn" data-paquete="solArena" data-adultos="1" data-ninos="0">Reservar ahora</a>
+        <!-- Botón para mostrar un video informativo del paquete -->
         <a class="btn btn-success" onclick="mostrarVideo('../videos/videoTunco.mp4')">Más información</a>
       </div>
     </div>
   
-    <!-- Modal de Video Informativo -->
-    <div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="etiquetaModalVideo" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="etiquetaModalVideo">Video Informativo</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-          <div class="modal-body">
-            <div class="ratio ratio-16x9">
-              <video id="videoPromocional" controls>
-                <source id="fuenteVideo" src="" type="video/mp4">
-                Tu navegador no soporta la reproducción de este video.
-              </video>
-            </div>
-          </div>
+<!-- Modal de Video Informativo -->
+<div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="etiquetaModalVideo" aria-hidden="true">
+  <!-- Contenedor del modal, tamaño grande y centrado -->
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    
+    <!-- Contenido del modal -->
+    <div class="modal-content">
+      
+      <!-- Encabezado del modal con título y botón de cerrar -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="etiquetaModalVideo">Video Informativo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      
+      <!-- Cuerpo del modal donde se mostrará el video -->
+      <div class="modal-body">
+        
+        <!-- Contenedor con proporción 16:9 para el video -->
+        <div class="ratio ratio-16x9">
+          
+          <!-- Reproductor de video con controles -->
+          <video id="videoPromocional" controls>
+            <!-- Fuente del video, se actualiza dinámicamente con JavaScript -->
+            <source id="fuenteVideo" src="" type="video/mp4">
+            Tu navegador no soporta la reproducción de este video.
+          </video>
+          
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   
     <div class="contenedor-promocion">
       <section class="promocion">
@@ -202,23 +247,35 @@
   
   </main>
 
-   <!-- Modal de Reserva Dinámica -->
-  <div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="reservaModalLabel">Reserva</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body" id="reservaModalBody">
-          <!-- Contenido dinámico se insertará aquí -->
-        </div>
-        <div class="modal-footer">
-          <a href="reservas.html" class="btn btn-primary">Ir al formulario de reserva</a>
-        </div>
+<!-- Modal de Reserva Dinámica -->
+<div class="modal fade" id="reservaModal" tabindex="-1" aria-labelledby="reservaModalLabel" aria-hidden="true">
+  
+  <!-- Contenedor del modal, centrado y tamaño grande -->
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    
+    <!-- Contenido del modal -->
+    <div class="modal-content">
+      
+      <!-- Encabezado del modal con título y botón de cerrar -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="reservaModalLabel">Reserva</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
+      
+      <!-- Cuerpo del modal donde se insertará contenido dinámico -->
+      <div class="modal-body" id="reservaModalBody">
+        <!-- Contenido dinámico se insertará aquí -->
+      </div>
+      
+      <!-- Pie del modal con botón para ir al formulario de reserva -->
+      <div class="modal-footer">
+        <a href="reservas.html" class="btn btn-primary">Ir al formulario de reserva</a>
+      </div>
+      
     </div>
   </div>
+</div>
+
 
 
   <!-- Footer -->
